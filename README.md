@@ -55,64 +55,52 @@ Runs the app in development mode.
 Launches the test runner in interactive watch mode.
 
 ### `npm run build`
+Builds the app for production in the `build` folder, optimized for performance.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+---
 
 
+## **View the project form here**
+Open: [viewer-excel](https://viewer-excel.netlify.app/) get an amazing experience.
+
+---
 
 
+## **Dependencies**
+The project uses the following key dependencies:
+- [xlsx](https://www.npmjs.com/package/xlsx): For reading and parsing Excel files.
+- [react-table](https://react-table.tanstack.com/): For rendering dynamic and interactive tables.
+- [react-chartjs-2](https://react-chartjs-2.js.org/): For creating beautiful charts.
+- [chart.js](https://www.chartjs.org/): For powering the charts.
+- [moment](https://momentjs.com/): For date and time manipulation.
+- [react-router-dom](https://): For Navigation data and page.
 
-npm install xlsx
+---
 
+## **Folder Structure**
+- `/src`: Contains all the application components.
+  - `/components`: Contains reusable components such as `LocalExcelReader`, `DataTable`, `DataGraphCallScore`, `DataGraphOverScore`, and `InterestLevelGauge`.
+  - `/App.js`: Main app logic.
 
-npm i react-table
+---
 
+## **Tailwind CSS**
+The project uses Tailwind CSS for styling. Ensure that the configuration is initialized correctly:
+```bash
+npx tailwindcss init
+```
+Tailwind configuration is set to include custom themes, shadows, and responsive designs.
 
-npm install react-chartjs-2 chart.js
-npm install moment
+---
+
+## **Acknowledgements**
+- [React](https://reactjs.org/)
+- [Create React App](https://create-react-app.dev/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [Chart.js](https://www.chartjs.org/)
+
+---
+
+## **Author**
+**Harish Nagure**  
+[GitHub](https://github.com/harish-nagure)   

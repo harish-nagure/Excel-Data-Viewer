@@ -20,7 +20,6 @@ const DataTable = ({ data }) => {
         Header: 'Time',
         accessor: 'Time',
       },
-
     ],
     []
   );
@@ -60,12 +59,12 @@ const DataTable = ({ data }) => {
                 return (
                   <tr
                     {...row.getRowProps()}
-                    className="hover:bg-gray-100 border-b border-gray-200 last:border-none rounded-lg"
+                    className="hover:bg-gray-200 border-b border-gray-500 last:border-none hover:font-bold"
                   >
                     {row.cells.map((cell) => (
                       <td
                         {...cell.getCellProps()}
-                        className="px-6 py-4 whitespace-nowrap text-black-700 rounded-lg cursor-pointer"
+                        className="px-6 py-4 whitespace-nowrap text-black-700 cursor-pointer"
                         onClick={() => handleClick(cell)}
                       >
                         {cell.render('Cell')}
