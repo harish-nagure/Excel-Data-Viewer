@@ -5,18 +5,17 @@ import { Chart, CategoryScale, LinearScale, BarController, BarElement, Title, To
 
 Chart.register(CategoryScale, LinearScale, BarController, BarElement, Title, Tooltip, Legend);
 
-const DataGraphOverScore = ({ data , }) => {
+const DataGraphOverScore = ({ data }) => {
 
   const chartData = {
-    labels: data.map((item) => item['Call_ID']),  
+    labels: [data['Call_ID'].toString()],  
     datasets: [{
         label: 'Overall Call Score',
-        data: data.map((item) => item['Overall Call score']),
-    
-      backgroundColor: 'rgba(153, 102, 255, 0.8)',
-      borderColor: 'rgba(153, 102, 255, 1)',
-      borderWidth: 1,
-      borderRadius: 10,
+        data: [data['Overall Call score']],
+        backgroundColor: 'rgba(153, 102, 255, 0.8)',
+        borderColor: 'rgba(153, 102, 255, 1)',
+        borderWidth: 1,
+        borderRadius: 10,
     }],
   };
 
