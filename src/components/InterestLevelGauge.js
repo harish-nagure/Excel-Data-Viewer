@@ -6,8 +6,7 @@ const InterestLevelGauge = ({ callData }) => {
 
   
   const normalizedPercentage = interest_level_percentage / 100;
-
-  console.log(normalizedPercentage);
+  // console.log(normalizedPercentage);
 
 
   return (
