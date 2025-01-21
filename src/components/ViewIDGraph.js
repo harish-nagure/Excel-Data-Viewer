@@ -28,12 +28,12 @@ const ViewIDGraph = () => {
           >
             Back to Table
           </button>
-          <div>
+          <div >
           <div className="mt-10">
               <h2 className="text-secondary text-2xl font-bold mb-6 border-b-2 border-primary pb-2">
                 Graphs
               </h2>
-              <div className="flex flex-col lg:flex-row gap-8">
+              <div className="flex flex-col lg:flex-row gap-10">
               <div className="bg-gray-100 rounded-lg shadow-lg p-6 flex-1 border border-gray-300 hover:shadow-2xl hover:bg-white  transition-shadow duration-300">
                   <DataGraphCallScore data={data} />
                 </div>
@@ -50,7 +50,7 @@ const ViewIDGraph = () => {
                   <div
                     className="bg-gray-100 border border-gray-300 rounded-lg shadow-md p-6 flex flex-col items-center hover:bg-white hover:shadow-2xl"
                     >
-                    <InterestLevelGauge callData={data} />
+                    <InterestLevelGauge callData={data}/>
                     <p className="text-secondary font-medium mt-4">Call ID: <strong>{data["Call_ID"]}</strong></p>
                   </div>
               </div>
