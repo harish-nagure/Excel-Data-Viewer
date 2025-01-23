@@ -6,14 +6,16 @@ import { Doughnut } from 'react-chartjs-2';
 ChartJS.register(ArcElement, Tooltip, Legend);
 
 const DataGraphOverScore = ({ data }) => {
+  console.log(data);
 
+  
   const overall_score = data['Overall Call score'];
   const scorePercentage = (overall_score ) * 10;
 
   console.log(overall_score,scorePercentage);
 
   const chartData = {
-    labels: ['Score'],
+    labels: ['Score', 'Remaining'], 
     datasets: [
       { 
         label: `Overall Score for Call ID: ${data['Call_ID'].toString()}`,
@@ -29,10 +31,11 @@ const DataGraphOverScore = ({ data }) => {
 
   const options = {
     responsive: true,
-    maintainAspectRatio: false,
+    maintainAspectRatio: true,
     plugins: {
       tooltip: {
         enabled: true,
+        position: 'nearest',
         callbacks: {
           label: (context) => {
             return `${context.label}: ${context.raw}%`;
@@ -40,20 +43,18 @@ const DataGraphOverScore = ({ data }) => {
         },
       },
       legend: {
-        display: true,
+        display: false,
       },
     },
-    cutout: '70%', 
+    cutout: '40%', 
   };
 
 
 
   return (
-  <div style={{ width: '350px', height: '350px', margin: '0 auto', padding: '10px' }}>
+  <div style={{ width: '100%', height: '100%', margin: '0 auto', padding: '10px' }}>
     <Doughnut data={chartData} options={options} />
-    <p style={{ textAlign: 'center', marginTop: '10px', fontSize: '16px', fontWeight: 'bold' }}>
-        Overall Score: {overall_score} / 5
-    </p> 
+    
   </div>
   );
 };

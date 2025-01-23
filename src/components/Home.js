@@ -1,10 +1,8 @@
-import React, { useState } from "react";
-import LocalExcelReader from "./LocalExcelReader";
+import React from "react";
 import DataTable from "./DataTable";
 
-const Home = () => {
-  const [excelData, setExcelData] = useState([]);
-
+const Home = ({ excelData }) => {
+  
   return (
     <div className="min-h-screen bg-gradient-to-r from-green-100 via-green-10 to-green-100 p-6">
       <h1 className="text-center text-secondary text-4xl font-extrabold mb-10">
@@ -12,7 +10,7 @@ const Home = () => {
       </h1>
       <div className="max-w-7xl mx-auto bg-white p-8 border border-black shadow-lg rounded-3xl">
 
-        <LocalExcelReader filePath="./Sample_Data.xlsx" onDataLoaded={setExcelData} />
+        {/* <LocalExcelReader filePath="./Sample_Data.xlsx" onDataLoaded={setExcelData} /> */}
         {excelData.length > 0 && (
           <div className="mt-10">
             <h2 className="text-secondary text-2xl font-bold mb-6 border-b-2 border-primary pb-2">
@@ -20,6 +18,20 @@ const Home = () => {
             </h2>
             <DataTable data={excelData} />
           
+
+
+
+
+
+          </div>
+        )}
+      </div>
+    </div>
+  );
+};
+
+export default Home;
+
 
             {/* <div className="mt-10">
               <h2 className="text-secondary text-2xl font-bold mb-6 border-b-2 border-primary pb-2">
@@ -52,14 +64,3 @@ const Home = () => {
                 ))}
               </div>
             </div> */}
-
-
-
-          </div>
-        )}
-      </div>
-    </div>
-  );
-};
-
-export default Home;

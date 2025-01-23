@@ -2,12 +2,12 @@ import React from 'react';
 import GaugeChart from 'react-gauge-chart';
 
 const InterestLevelGauge = ({ callData }) => {
+
+  // console.log(callData);
   const { Call_ID, interest_level, interest_level_percentage } = callData;
 
   
   const normalizedPercentage = interest_level_percentage / 100;
-  // console.log(normalizedPercentage);
-
 
   return (
     <div style={{ 
@@ -18,7 +18,7 @@ const InterestLevelGauge = ({ callData }) => {
       textAlign: 'center',
       
       }}>
-      <h3 style={{ marginBottom: '10px' }}>Interest Level: {interest_level.toUpperCase()}</h3>
+      <h3 style={{ marginBottom: '10px' }}>Interest Level: {interest_level}</h3>
       <GaugeChart
         id={`gauge-chart-${Call_ID}`}
         nrOfLevels={10}

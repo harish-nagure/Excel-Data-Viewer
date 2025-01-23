@@ -8,7 +8,7 @@ const ViewIDGraph = () => {
 
     const location = useLocation(); 
     const data = location.state;
-    // console.log(data);
+    console.log(data);
     const navigate = useNavigate();
 
     const handleClick = () => {
@@ -37,8 +37,13 @@ const ViewIDGraph = () => {
               <div className="bg-gray-100 rounded-lg shadow-lg p-6 flex-1 border border-gray-300 hover:shadow-2xl hover:bg-white  transition-shadow duration-300">
                   <DataGraphCallScore data={data} />
                 </div>
-                <div className="bg-gray-100 rounded-lg shadow-lg p-6 flex-1 border border-gray-300 hover:shadow-2xl hover:bg-white  transition-shadow duration-300">
+                <div className=" bg-gray-100 rounded-lg shadow-lg p-6 flex-1 border border-gray-300 hover:shadow-2xl hover:bg-white  transition-shadow duration-300">
+                  
+                <p style={{ textAlign: 'center', marginTop: '10px', fontSize: '16px', fontWeight: 'bold'}}>
+                      Overall Score: {data['Overall Call score']} / 5
+                  </p>
                   <DataGraphOverScore data={data} />
+                   
                 </div>
               </div>
             </div>

@@ -73,6 +73,9 @@ The project uses the following key dependencies:
 - [chart.js](https://www.chartjs.org/): For powering the charts.
 - [moment](https://momentjs.com/): For date and time manipulation.
 - [react-router-dom](https://): For Navigation data and page.
+- [react-icons](https://react-icons.github.io/react-icons/):For Icons.
+- [react-calendar](https://): For Date and page.
+
 
 ---
 

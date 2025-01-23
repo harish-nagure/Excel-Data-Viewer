@@ -1,23 +1,39 @@
-import React from "react";
+import React,{useState} from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import Home from "./components/Home";
 import ViewIDGraph from "./components/ViewIDGraph";
+import Dashboard from "./components/Dashboard";
+import LocalExcelReader from "./components/LocalExcelReader";
 
 const App = () => {
-
+  const [excelData, setExcelData] = useState([]);
   return (
-
-
     <Router>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        
-        <Route path="/ViewIDGraph" element={<ViewIDGraph/>} />
-      </Routes>
-    </Router>
+    
+      <LocalExcelReader filePath="./Sample_Data.xlsx" onDataLoaded={setExcelData} />
+ 
 
-    // <div className="min-h-screen bg-gradient-to-r from-green-100 via-green-10 to-green-100 p-6">
+    {excelData.length > 0 ? (
+      <Routes>
+        <Route path="/" element={<Home excelData={excelData} />} />
+        <Route path="/ViewIDGraph" element={<ViewIDGraph excelData={excelData} />} />
+        <Route path="/db" element={<Dashboard excelData={excelData} />} />
+      </Routes>
+    ) : (
+      <p>Loading Excel Data...</p>
+    )}
+  </Router>
+
+   
+
+  );
+};
+
+export default App;
+
+
+ // <div className="min-h-screen bg-gradient-to-r from-green-100 via-green-10 to-green-100 p-6">
     //   <h1 className="text-center text-secondary text-4xl font-extrabold mb-10">
     //     Excel Data Viewer for Nousteam
     //   </h1>
@@ -70,8 +86,3 @@ const App = () => {
     //     )}
     //   </div>
     // </div>
-
-  );
-};
-
-export default App;
