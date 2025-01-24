@@ -11,6 +11,7 @@ const Home = ({ excelData }) => {
       <div className="max-w-7xl mx-auto bg-white p-8 border border-black shadow-lg rounded-3xl">
 
         {/* <LocalExcelReader filePath="./Sample_Data.xlsx" onDataLoaded={setExcelData} /> */}
+       
         {excelData.length > 0 && (
           <div className="mt-10">
             <h2 className="text-secondary text-2xl font-bold mb-6 border-b-2 border-primary pb-2">
