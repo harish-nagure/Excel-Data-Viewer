@@ -1,9 +1,9 @@
 .custom-calendar {
-  border: 2px solid #e2e8f0; 
+  border:none; 
   border-radius: 12px;
-  padding: 12px;
+  padding: 4px;
   background-color: #ffffff;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: none;
   font-family: 'Inter', sans-serif;
 }
 
@@ -31,7 +31,7 @@
 
 .custom-calendar .react-calendar__tile--rangeStart,
 .custom-calendar .react-calendar__tile--rangeEnd {
-  background-color: #48bb78 !important;
+  background-color: #219653 !important;
   color: white;
   font-weight: bold;
 }
@@ -65,7 +65,7 @@
 
 .custom-calendar .react-calendar__month-view__weekdays {
   text-transform: uppercase;
-  color: #48bb78;
+  color: #219653;
   font-weight: bold;
   font-size: 0.8rem;
   padding-bottom: 4px;

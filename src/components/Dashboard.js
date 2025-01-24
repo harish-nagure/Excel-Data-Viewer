@@ -24,7 +24,7 @@ import DataGraphOverScore from "./DataGraphOverScore";
 
 const Sidebar = () => {
   return (
-    <aside className="w-80 h-screen bg-slate p-4 flex flex-col">
+    <aside className="w-80 h-screen bg-slate p-4 flex flex-col overflow-y-auto">
       {/* <div className="text-xl font-bold mb-8">Callify</div> */}
       <img src={LogoDash} alt="profile" className="w-32 mb-5 h-11 " />
 
@@ -145,7 +145,7 @@ const CalendarSection = () => {
       />
       <div className="mt-6 text-center">
         <button 
-        className="bg-green-400 text-white font-semibold py-2 px-4 rounded-lg hover:bg-green-500 hover:text-white">
+        className="bg-[#219653] text-white font-semibold py-2 px-4 rounded-lg hover:bg-[#1e874b] hover:text-white">
           Show call list {""}
           <span className="text-white ">
             (
@@ -291,9 +291,11 @@ const Dashboard = (excelData) => {
 
     
     <div className="flex">
+      <div className="bg-white w-80 h-screen fixed ">
       <Sidebar />
+      </div>
       
-      <main className="flex-1 " style={{ backgroundColor: "#F5F6FA" }}>
+      <main className="flex-1 ml-80" style={{ backgroundColor: "#F5F6FA" }}>
 
         <div className="w-full h-16 bg-white px-4 flex items-center justify-between border-b border-gray-200">
         
@@ -319,9 +321,9 @@ const Dashboard = (excelData) => {
 
             <div className="flex items-center gap-1">
             <img
-                src="https://static.vecteezy.com/system/resources/thumbnails/026/497/734/small_2x/businessman-on-isolated-png.png" 
+                src="https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg?cs=srgb&dl=pexels-simon-robben-55958-614810.jpg&fm=jpg" 
                 alt="Profile"
-                className="w-10 h-10 rounded-full"
+                className="w-10 h-10 rounded-full border border-gray-300 content-center"
             />
             <span className="hidden md:inline-block text-gray-800 font-medium hover:text-violet-800">
                 Shariq
