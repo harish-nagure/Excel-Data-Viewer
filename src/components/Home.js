@@ -23,17 +23,6 @@ const Home = ({ excelData }) => {
 
 
 
-
-          </div>
-        )}
-      </div>
-    </div>
-  );
-};
-
-export default Home;
-
-
             {/* <div className="mt-10">
               <h2 className="text-secondary text-2xl font-bold mb-6 border-b-2 border-primary pb-2">
                 Graphs
@@ -65,3 +54,14 @@ export default Home;
                 ))}
               </div>
             </div> */}
+
+          </div>
+        )}
+      </div>
+    </div>
+  );
+};
+
+export default Home;
+
+
