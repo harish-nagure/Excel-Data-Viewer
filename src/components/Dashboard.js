@@ -192,7 +192,7 @@ const CallSummary = ({ data }) => {
               <td className="py-2 px-2">{index+1}</td>
               <td className="py-2 px-2">{call.Name}</td>
               <td className="py-2 px-2">{call.Call_ID}</td>
-              <td className="py-2 px-2">{call.Date}</td>
+              <td className="py-2 px-2">{new Intl.DateTimeFormat('en-US', { month: 'long',day: 'numeric',year: 'numeric',}).format(new Date(call.Date))}</td>
               <td className="py-2 px-2">{call.Time}</td>
               {/* <td className="py-2 px-3">{call["Overall Call score"]}</td> */}
               {/* <td className="py-2 px-3">{call.interest_level}</td> */}

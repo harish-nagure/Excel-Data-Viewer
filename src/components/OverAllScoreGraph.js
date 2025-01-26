@@ -14,10 +14,10 @@ const centerTextPlugin = {
 
     const text = `${score}/5`; 
 
-    const fontSize = 12; 
+    const fontSize = 16; 
 
     ctx.save();
-    ctx.fontSize = `${fontSize}px`;
+    ctx.font = `bold ${fontSize}px`;
     ctx.font = 'bold';
     ctx.textAlign = 'center';
     ctx.textBaseline = 'middle';
