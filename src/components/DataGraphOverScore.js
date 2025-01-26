@@ -46,7 +46,7 @@ const DataGraphOverScore = ({ data }) => {
         display: false,
       },
     },
-    cutout: '40%', 
+    cutout: '70%', 
   };
 
 

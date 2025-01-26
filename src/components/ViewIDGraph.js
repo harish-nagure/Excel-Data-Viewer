@@ -1,8 +1,10 @@
 import React from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import DataGraphCallScore from './DataGraphCallScore';
-import DataGraphOverScore from './DataGraphOverScore';
+// import DataGraphOverScore from './DataGraphOverScore';
 import InterestLevelGauge from './InterestLevelGauge';
+
+import OverAllScoreGraph from './OverAllScoreGraph';
 
 const ViewIDGraph = () => {
 
@@ -11,9 +13,7 @@ const ViewIDGraph = () => {
     console.log(data);
     const navigate = useNavigate();
 
-    const handleClick = () => {
-        navigate('/');
-    }
+  
 
     return (
         <div className="min-h-screen bg-gradient-to-r from-green-100 via-green-10 to-green-100 p-6">
@@ -24,7 +24,9 @@ const ViewIDGraph = () => {
         <div className="p-4">
           <button
             className="mb-4 px-4 py-2 bg-blue-500 text-white rounded-md"
-            onClick={() => handleClick()} 
+            onClick={() => {
+              navigate('/');
+          }} 
           >
             Back to Table
           </button>
@@ -42,7 +44,7 @@ const ViewIDGraph = () => {
                 <p style={{ textAlign: 'center', marginTop: '10px', fontSize: '16px', fontWeight: 'bold'}}>
                       Overall Score: {data['Overall Call score']} / 5
                   </p>
-                  <DataGraphOverScore data={data} />
+                  <OverAllScoreGraph data={data} />
                    
                 </div>
               </div>

@@ -5,7 +5,10 @@ import Home from "./components/Home";
 import ViewIDGraph from "./components/ViewIDGraph";
 import Dashboard from "./components/Dashboard";
 import LocalExcelReader from "./components/LocalExcelReader";
+import Dashboard2 from "./components/Dashboard2";
 
+
+  
 const App = () => {
   const [excelData, setExcelData] = useState([]);
   return (
@@ -18,6 +21,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Home excelData={excelData} />} />
         <Route path="/ViewIDGraph" element={<ViewIDGraph excelData={excelData} />} />
+        <Route path="/db2" element={<Dashboard2 excelData={excelData} />} />
         <Route path="/db" element={<Dashboard excelData={excelData} />} />
       </Routes>
     ) : (

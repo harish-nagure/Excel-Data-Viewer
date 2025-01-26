@@ -19,7 +19,8 @@ import LogoDash from "../Image/logo_dash.png";
 import ProductImg from "../Image/product.png";
 
 
-import DataGraphOverScore from "./DataGraphOverScore";
+// import DataGraphOverScore from "./DataGraphOverScore";
+import OverAllScoreGraph from "./OverAllScoreGraph";
 
 
 const Sidebar = () => {
@@ -136,7 +137,7 @@ const CalendarSection = () => {
 
   return (
     <div className="flex-1 w-full lg:max-w-sm bg-white p-4 rounded-lg shadow">
-      <h2 className="text-lg font-bold mb-4">Calendar</h2>
+      <h2 className="text-lg font-bold mb-4">Calls Overview</h2>
       <Calendar
         onChange={setDate}
         value={date}
@@ -177,6 +178,7 @@ const CallSummary = ({ data }) => {
       <table className="w-full text-sm text-left ">
         <thead>
           <tr className="border-b">
+            <th className="py-2 px-2">Sr. No</th>
             <th className="py-2 px-2">Name</th>
             <th className="py-2 px-2">Call ID</th>
             <th className="py-2 px-2">Date</th>
@@ -187,6 +189,7 @@ const CallSummary = ({ data }) => {
         <tbody>
           {callData.map((call, index) => (
             <tr key={index} className=" hover:bg-gray-100 ">
+              <td className="py-2 px-2">{index+1}</td>
               <td className="py-2 px-2">{call.Name}</td>
               <td className="py-2 px-2">{call.Call_ID}</td>
               <td className="py-2 px-2">{call.Date}</td>
@@ -195,9 +198,9 @@ const CallSummary = ({ data }) => {
               {/* <td className="py-2 px-3">{call.interest_level}</td> */}
 
               <td className="py-2 px-0 w-1">
-                <div className="max-w-[50px] max-h-[200px] flex flex-col justify-center items-center">
-                  <DataGraphOverScore data={call} />
-                  <p className="text-xs font-semibold text-center">{call["Overall Call score"]} / 5</p>
+                <div className="max-w-[70px] max-h-[200px] flex flex-col justify-center items-center">
+                  <OverAllScoreGraph data={call} />
+                  {/* <p className="text-xs font-semibold text-center">{call["Overall Call score"]} / 5</p> */}
                 </div>
               </td>
 
@@ -325,7 +328,7 @@ const Dashboard = (excelData) => {
                 alt="Profile"
                 className="w-10 h-10 rounded-full border border-gray-300 content-center"
             />
-            <span className="hidden md:inline-block text-gray-800 font-medium hover:text-violet-800">
+            <span className="hidden text-sm md:inline-block text-gray-800 font-medium hover:text-violet-800">
                 Shariq
             </span>
             </div>
@@ -335,8 +338,8 @@ const Dashboard = (excelData) => {
 
 
         <div className="flex-1 bg-gray-100 p-6 mt-4">
-        <h1 className="text-4xl font-bold">Welcome, Shariq Shaikh</h1>
-        <p className="text-xl    text-gray-700 font-semibold">View progress and insights</p>
+        <h1 className="text-3xl font-bold">Welcome, Shariq Shaikh</h1>
+        <p className="text-base    text-gray-700 font-semibold">View progress and insights</p>
         <DashboardSummary  />
         <div className="flex flex-col lg:flex-row gap-6 mt-6">
             <CallSummary data={excelData}/>
