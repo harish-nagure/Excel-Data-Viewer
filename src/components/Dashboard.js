@@ -188,8 +188,8 @@ const CallSummary = ({ data }) => {
         </thead>
         <tbody>
           {callData.map((call, index) => (
-            <tr key={index} className=" hover:bg-gray-100 ">
-              <td className="py-2 px-2">{index+1}</td>
+            <tr key={index} className=" hover:bg-gray-100 z-10 rounded-3xl">  
+              <td className="py-2 px-2 rounded-l-2xl">{index+1}</td>
               <td className="py-2 px-2">{call.Name}</td>
               <td className="py-2 px-2">{call.Call_ID}</td>
               <td className="py-2 px-2">{new Intl.DateTimeFormat('en-US', { month: 'long',day: 'numeric',year: 'numeric',}).format(new Date(call.Date))}</td>
@@ -197,7 +197,7 @@ const CallSummary = ({ data }) => {
               {/* <td className="py-2 px-3">{call["Overall Call score"]}</td> */}
               {/* <td className="py-2 px-3">{call.interest_level}</td> */}
 
-              <td className="py-2 px-0 w-1">
+              <td className="py-2 px-0 w-1 rounded-r-2xl">
                 <div className="max-w-[70px] max-h-[200px] flex flex-col justify-center items-center">
                   <OverAllScoreGraph data={call} />
                   {/* <p className="text-xs font-semibold text-center">{call["Overall Call score"]} / 5</p> */}

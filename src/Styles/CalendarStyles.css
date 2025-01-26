@@ -15,6 +15,17 @@
   text-decoration: none;
 }
 
+.custom-calendar .react-calendar__tile--now{
+  background-color: #219653 !important;
+  color: white !important; 
+  font-weight: bold;
+}
+
+.custom-calendar .react-calendar__tile--now:hover{
+  color: black !important; 
+  font-weight: bold;
+}
+
 .custom-calendar .react-calendar__tile {
   padding: 12px;
   font-size: 0.95rem;
