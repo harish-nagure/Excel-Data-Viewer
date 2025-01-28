@@ -19,10 +19,6 @@ const Home = ({ excelData }) => {
             </h2>
             <DataTable data={excelData} />
           
-
-
-
-
             {/* <div className="mt-10">
               <h2 className="text-secondary text-2xl font-bold mb-6 border-b-2 border-primary pb-2">
                 Graphs

@@ -63,6 +63,30 @@ const ViewIDGraph = () => {
               </div>
             </div>
           </div>
+
+          <div className="details-container grid grid-cols-1 gap-6 md:grid-cols-2 p-6 bg-gray-100 rounded-xl shadow-md">
+      {/* Summary Section */}
+      <div>
+        <h3 className="text-xl font-semibold text-gray-700 mb-2">Summary</h3>
+        <textarea
+          // ref={summaryRef}
+          readOnly
+          value={data.Summary || "No summary available"}
+          className="w-full p-4 border border-gray-300 rounded-lg focus:outline-none bg-gray-50 text-gray-700 resize-none"
+        />
+      </div>
+
+      {/* Agent Feedback Section */}
+      <div>
+        <h3 className="text-xl font-semibold text-gray-700 mb-2">Agent Feedback</h3>
+        <textarea
+          // ref={feedbackRef}
+          readOnly
+          value={data["Agent Feedback"] || "No feedback available"}
+          className="w-full p-4 max-h-full border border-gray-300 rounded-lg focus:outline-none bg-gray-50 text-gray-700 resize-none"
+        />
+      </div>
+    </div>
         </div>
         </div>
         </div>

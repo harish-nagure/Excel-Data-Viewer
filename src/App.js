@@ -19,14 +19,17 @@ const App = () => {
 
     {excelData.length > 0 ? (
       <Routes>
-        <Route path="/" element={<Home excelData={excelData} />} />
+        <Route path="/" element={<Login />} />
+        <Route path="/home" element={<Home excelData={excelData} />} />
+        <Route path="/dashboard" element={<Dashboard excelData={excelData} />} />
         <Route path="/ViewIDGraph" element={<ViewIDGraph excelData={excelData} />} />
         <Route path="/db2" element={<Dashboard2 excelData={excelData} />} />
-        <Route path="/db" element={<Dashboard excelData={excelData} />} />
-        <Route path="/login" element={<Login />} />
+        
       </Routes>
     ) : (
-      <p>Loading Excel Data...</p>
+      <div className="flex items-center justify-center h-screen">
+        <p className="text-lg text-gray-600">Loading pages...</p>
+      </div>
     )}
   </Router>
 

@@ -136,14 +136,16 @@ const CalendarSection = () => {
   const [date, setDate] = useState([new Date(), new Date()]);
 
   return (
-    <div className="flex-1 w-full lg:max-w-sm bg-white p-4 rounded-lg shadow">
+    <div className="flex-1 w-full justify-center items-center lg:max-w-sm md:max-w-fit  bg-white p-4 rounded-lg shadow">
       <h2 className="text-lg font-bold mb-4">Calls Overview</h2>
+      <div className="flex items-center justify-center">
       <Calendar
         onChange={setDate}
         value={date}
         selectRange={true}
-        className="custom-calendar"
+        className="custom-calendar text-center"
       />
+      </div>
       <div className="mt-6 text-center">
         <button 
         className="bg-[#219653] text-white font-semibold py-2 px-4 rounded-lg hover:bg-[#1e874b] hover:text-white">
@@ -340,7 +342,7 @@ const Dashboard = (excelData) => {
         <h1 className="text-3xl font-bold">Welcome, Shariq Shaikh</h1>
         <p className="text-base    text-gray-700 font-semibold">View progress and insights</p>
         <DashboardSummary  />
-        <div className="flex flex-col lg:flex-row gap-6 mt-6">
+        <div className="flex flex-col lg:flex-row gap-6 mt-6  ">
             <CallSummary data={excelData}/>
             <CalendarSection />
         </div>

@@ -5,6 +5,9 @@
   background-color: #ffffff;
   box-shadow: none;
   font-family: 'Inter', sans-serif;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
 }
 
 .react-calendar,
@@ -13,6 +16,8 @@
 .react-calendar *:after {
   box-sizing: border-box;
   text-decoration: none;
+  align-items: center;
+  text-align: center;
 }
 
 .custom-calendar .react-calendar__tile--now{
