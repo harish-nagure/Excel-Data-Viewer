@@ -1,4 +1,5 @@
 import React,{ useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "tailwindcss/tailwind.css";
 
 import Calendar from "react-calendar";
@@ -21,6 +22,8 @@ import ProductImg from "../Image/product.png";
 
 // import DataGraphOverScore from "./DataGraphOverScore";
 import OverAllScoreGraph from "./OverAllScoreGraph";
+
+
 
 
 const Sidebar = () => {
@@ -166,7 +169,14 @@ const CalendarSection = () => {
 
 const CallSummary = ({ data }) => {
 
+  const navigate  = useNavigate();
+
   const callData = data?.excelData || [];
+
+  const handleClick = (call) => {
+    console.log("Call Data:", call);
+    navigate('/ViewIDGraph', { state: call });
+  };
 
   if (!Array.isArray(callData) || callData.length === 0) {
     return <p className="text-gray-500">Loading call summary...</p>;
@@ -190,7 +200,10 @@ const CallSummary = ({ data }) => {
         </thead>
         <tbody>
           {callData.map((call, index) => (
-            <tr key={index} className=" hover:bg-gray-100 z-10 rounded-3xl">  
+            <tr key={index} 
+              className=" hover:bg-gray-100 z-10 rounded-3xl" 
+              onClick={() => handleClick(call)} >  
+
               <td className="py-2 px-2 rounded-l-2xl">{call.Call_ID}</td>
               <td className="py-2 px-2">{call.Name}</td>
               <td className="py-2 px-2">+91 455625464</td>
