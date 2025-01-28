@@ -45,7 +45,7 @@ function Login() {
             <p className="text-gray-600 text-base">See what is going on with your business</p>
           </div>
 
-          <button className="w-full flex items-center justify-center bg-gray-100 text-gray-600 border border-gray-300 rounded-lg py-2 mb-6 hover:bg-gray-200 transition">
+          <button className="w-full flex items-center justify-center bg-white text-[#828282] border border-gray-300 rounded-lg py-2 mb-6 hover:bg-gray-100 transition">
             <FcGoogle className="w-6 h-6 mr-2" />
             Continue with Google
           </button>
