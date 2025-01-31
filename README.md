@@ -75,6 +75,7 @@ The project uses the following key dependencies:
 - [react-router-dom](https://): For Navigation data and page.
 - [react-icons](https://react-icons.github.io/react-icons/):For Icons.
 - [react-calendar](https://): For Date and page.
+- [react-gauge-chart](https://):Gauge chart.
 
 
 ---

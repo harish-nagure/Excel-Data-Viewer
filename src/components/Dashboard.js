@@ -233,7 +233,7 @@ const Dashboard = (excelData) => {
         
         <div className="flex-1 bg-gray-100 p-6 mt-4">
         <h1 className="text-3xl font-bold">Welcome, Shariq Shaikh</h1>
-        <p className="text-base    text-gray-700 font-semibold">View progress and insights</p>
+        <p className="text-base text-gray-700 font-semibold">View progress and insights</p>
         <DashboardSummary  />
         <div className="flex flex-col lg:flex-row gap-6 mt-6  ">
             <CallSummary data={excelData}/>

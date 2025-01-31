@@ -29,8 +29,8 @@ const ViewIDGraph = () => {
 
 
         <div className="bg-gray-100 p-8 mt-4">
-          <h1 className="text-4xl font-bold mb-2">Call <span className="text-[#8204FF]">Statistics</span></h1>
-          <p className="text-lg text-gray-600">Track Call Progress and Insights</p>
+          <h1 className="text-3xl font-bold">Call <span className="text-[#8204FF]">Statistics</span></h1>
+          <p className="text-base text-gray-700 font-semibold">Track Call Progress and Insights</p>
 
         
           <div className="grid lg:grid-cols-2 gap-6 mt-8 items-center h-full">
@@ -42,7 +42,7 @@ const ViewIDGraph = () => {
               <DataGraphOverScore data={data} />
             </div>
             <div className="bg-white p-6 rounded-2xl shadow-md">
-              <InterestLevelGauge callData={data} />
+              <InterestLevelGauge data={data} />
             </div>
           </div>
 

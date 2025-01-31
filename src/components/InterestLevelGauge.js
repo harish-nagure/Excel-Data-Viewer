@@ -1,10 +1,10 @@
 import React from 'react';
 import GaugeChart from 'react-gauge-chart';
 
-const InterestLevelGauge = ({ callData }) => {
+const InterestLevelGauge = ({ data }) => {
 
   // console.log(callData);
-  const { Call_ID, interest_level, interest_level_percentage } = callData;
+  const { Call_ID, interest_level, interest_level_percentage } = data;
 
   
   const normalizedPercentage = interest_level_percentage / 100;
