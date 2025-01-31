@@ -28,7 +28,7 @@ const centerTextPlugin = {
   },
 };
 
-const OverAllScoreGraph = ({ data }) => {
+const DashboardOverAllGraph = ({ data }) => {
   const overall_score = data['Overall Call score'];
   const scorePercentage = overall_score * 10;
 
@@ -66,4 +66,4 @@ const OverAllScoreGraph = ({ data }) => {
   );
 };
 
-export default OverAllScoreGraph;
+export default DashboardOverAllGraph;

@@ -13,11 +13,11 @@ import { LuClock } from "react-icons/lu";
 
 import ProductImg from "../Image/product.png";
 
-import Sidebar from "./Sidebar";
+import DashboardSidebar from "./DashboardSidebar";
 
 
 // import DataGraphOverScore from "./DataGraphOverScore";
-import OverAllScoreGraph from "./OverAllScoreGraph";
+import DashboardOverAllGraph from "./DashboardOverAllGraph";
 import DashboardHead from "./DashboardHead";
 
 
@@ -91,7 +91,7 @@ const CallSummary = ({ data }) => {
 
   const handleClick = (call) => {
     console.log("Call Data:", call);
-    navigate('/ViewIDGraph', { state: call });
+    navigate('/viewIDdetails', { state: call });
   };
 
   if (!Array.isArray(callData) || callData.length === 0) {
@@ -129,7 +129,7 @@ const CallSummary = ({ data }) => {
 
               <td className="py-2 px-0 w-1 rounded-r-2xl">
                 <div className="max-w-[70px] max-h-[200px] flex flex-col justify-center items-center">
-                  <OverAllScoreGraph data={call} />
+                  <DashboardOverAllGraph data={call} />
                   
                 </div>
               </td>
@@ -225,7 +225,7 @@ const Dashboard = (excelData) => {
     
     <div className="flex font-inter">
       <div className="bg-white w-80 h-screen fixed ">
-      <Sidebar />
+      <DashboardSidebar />
       </div>
       
       <main className="flex-1 ml-80" style={{ backgroundColor: "#F5F6FA" }}>

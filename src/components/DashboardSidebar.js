@@ -14,7 +14,7 @@ import { LuBadgeHelp} from "react-icons/lu";
 import LogoDash from "../Image/logo_dash.png";
 
 
-const Sidebar = () => {
+const DashboardSidebar = () => {
     return (
       <aside className="w-80 h-screen bg-slate p-4 flex flex-col overflow-y-auto">
         {/* <div className="text-xl font-bold mb-8">Callify</div> */}
@@ -97,4 +97,4 @@ const Sidebar = () => {
   };
 
 
-export default Sidebar;
+export default DashboardSidebar;

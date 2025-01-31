@@ -26,7 +26,7 @@ function Login() {
     } else {
       setError("");
       // console.log("Login successful!");
-      navigate('/home');
+      navigate('/dashboard');
       
     }
   };

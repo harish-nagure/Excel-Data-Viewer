@@ -2,7 +2,7 @@ import React from 'react';
 import { useLocation } from 'react-router-dom';
 
 
-import Sidebar from './Sidebar';
+import DashboardSidebar from './DashboardSidebar';
 import DataGraphOverScore from './DataGraphOverScore';
 import DataGraphCallScore from './DataGraphCallScore';
 import InterestLevelGauge from './InterestLevelGauge';
@@ -21,7 +21,7 @@ const ViewIDGraph = () => {
       <div className="flex font-inter">
 
       <div className="bg-white w-80 h-screen fixed ">
-      <Sidebar />
+      <DashboardSidebar />
       </div>
       
       <main className="flex-1 ml-80" style={{ backgroundColor: "#F5F6FA" }}>
