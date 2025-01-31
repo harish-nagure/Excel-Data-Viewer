@@ -104,8 +104,8 @@ const DataGraphCallScore = ({ data }) => {
   return (
     <div>
       <h3 className="mb-2 text-xl font-bold">Call Score</h3>
-      <p className="text-sm text-gray-500">Get insight about the call</p>
-      <div className="w-full h-[300px] pt-10">
+      <p className="text-sm text-gray-500 mb-5">Get insight about the call</p>
+      <div className="w-full h-[250px]">
         <Bar data={chartData} options={options} />
       </div>
     </div>
