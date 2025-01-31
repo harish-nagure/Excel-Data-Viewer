@@ -6,7 +6,7 @@ import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
 import "../Styles/CalendarStyles.css";
 
-import { IoSearch, IoLogOutOutline, IoNotificationsOutline, IoBarChartOutline, IoBagCheck } from "react-icons/io5";
+import { IoBarChartOutline, IoBagCheck } from "react-icons/io5";
 import { LuClock } from "react-icons/lu";
 
 
@@ -18,6 +18,7 @@ import Sidebar from "./Sidebar";
 
 // import DataGraphOverScore from "./DataGraphOverScore";
 import OverAllScoreGraph from "./OverAllScoreGraph";
+import DashboardHead from "./DashboardHead";
 
 
 
@@ -228,44 +229,8 @@ const Dashboard = (excelData) => {
       </div>
       
       <main className="flex-1 ml-80" style={{ backgroundColor: "#F5F6FA" }}>
-
-        <div className="w-full h-16 bg-white px-4 flex items-center justify-between border-b border-gray-200">
+        <DashboardHead/>
         
-        <div className="flex items-center bg-gray-100 rounded-full px-3 py-2 w-full h-3/5  max-w-md border border-gray-300"> 
-            <IoSearch className="text-gray-800 mr-3 size-7" />
-            <input
-            type="text"
-            placeholder="Search"
-            className="bg-transparent outline-none w-full text-gray-700"
-            />
-        </div>
-
-        
-        <div className=" flex items-center gap-4">
-
-            <button className="">
-            <IoNotificationsOutline className="text-gray-800 text-xl hover:text-violet-800" />
-            </button>
-         
-            <button className="">
-            <IoLogOutOutline className="text-gray-800 text-xl hover:text-violet-800" />
-            </button>
-
-            <div className="flex items-center gap-1">
-            <img
-                src="https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg?cs=srgb&dl=pexels-simon-robben-55958-614810.jpg&fm=jpg" 
-                alt="Profile"
-                className="w-10 h-10 rounded-full border border-gray-300 content-center"
-            />
-            <span className="hidden text-sm md:inline-block text-gray-800 font-medium hover:text-violet-800">
-                Shariq
-            </span>
-            </div>
-
-        </div>
-        </div>
-
-
         <div className="flex-1 bg-gray-100 p-6 mt-4">
         <h1 className="text-3xl font-bold">Welcome, Shariq Shaikh</h1>
         <p className="text-base    text-gray-700 font-semibold">View progress and insights</p>
