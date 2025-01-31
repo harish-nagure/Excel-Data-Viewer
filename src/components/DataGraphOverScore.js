@@ -109,7 +109,7 @@ const DataGraphOverScore = ({ data }) => {
     <div className="w-full h-full items-center">
       <h3 className="mb-2 text-xl font-bold">Overall Score</h3>
       <p className="text-sm text-gray-500 mb-5">Overall score of the call</p>
-      <div className="w-full h-[20rem] md:h-[22rem] lg:h-[24rem] flex justify-center">
+      <div className="w-full h-[200px] md:h-[240px] lg:h-[280px] flex justify-center">
         <Doughnut data={chartData} options={options} plugins={[centerTextPlugin]} />
       </div>
     </div>
