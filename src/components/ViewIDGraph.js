@@ -33,7 +33,7 @@ const ViewIDGraph = () => {
           <p className="text-base text-gray-700 font-semibold">Track Call Progress and Insights</p>
 
         
-          <div className="grid lg:grid-cols-2 gap-6 mt-8 items-center h-full">
+          <div className="grid lg:grid-cols-2 gap-6 mt-8 items-center h-full 3xl:grid-cols-3">
 
             <div className="bg-white p-6 rounded-2xl shadow-md">
               <DataGraphCallScore data={data} />
