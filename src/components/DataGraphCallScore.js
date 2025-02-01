@@ -42,6 +42,7 @@ const DataGraphCallScore = ({ data }) => {
           return gradient;
         },
         borderRadius: 10,
+        barThickness: 40,
       },
 
     ],
@@ -99,6 +100,7 @@ const DataGraphCallScore = ({ data }) => {
         },
       },
     },
+    
   };
 
   return (

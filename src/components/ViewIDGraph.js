@@ -53,8 +53,8 @@ const ViewIDGraph = () => {
             
           </div>
           <div className="bg-white p-6 rounded-2xl shadow-md mt-10">
-              <AgentFeedback  data={data} />
-            </div>
+            <AgentFeedback  data={data} />
+          </div>
 
 
         </div>

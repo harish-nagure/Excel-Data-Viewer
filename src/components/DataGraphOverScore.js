@@ -22,8 +22,8 @@ const DataGraphOverScore = ({ data }) => {
       const centerX = (left + right) / 2; 
       const centerY = (top + bottom) / 2;
 
-      const score = overall_score.toString()
-      ;
+      const score = overall_score.toString();
+
       const text = `${score}/5`;
 
       const fontSize = 28; 
@@ -111,7 +111,10 @@ const DataGraphOverScore = ({ data }) => {
       <h3 className="mb-2 text-xl font-bold">Overall Score</h3>
       <p className="text-sm text-gray-500 mb-5">Overall score of the call</p>
       <div className="w-full h-[200px] md:h-[230px] lg:h-[250px] flex justify-center">
+      <div className="w-full h-[180px] md:h-[200px] lg:h-[220px] flex justify-center">
+        
         <Doughnut data={chartData} options={options} plugins={[centerTextPlugin]} />
+        </div>
       </div>
     </div>
   );

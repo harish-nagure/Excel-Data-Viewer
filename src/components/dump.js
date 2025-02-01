@@ -169,3 +169,16 @@ const DataGraphCallScore = ({ data }) => {
 };
 
 export default DataGraphCallScore;
+  // tickLabels: {
+            //   hide:true,
+            //   type: 'outer',
+            //   defaultTickValueConfig: {
+            //     formatTextValue: (tickVal) => getInterestLabel(tickVal),
+            //     style: { fontSize: 10, fill: "#9B9B9B" },
+            //   },
+              
+            //   defaultTickLineConfig: {
+            //     distanceFromArc: 0.55,
+            //   },
+              
+            // }

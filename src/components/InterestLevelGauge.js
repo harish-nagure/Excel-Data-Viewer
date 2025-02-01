@@ -37,8 +37,8 @@ const InterestLevelGauge = ({ data }) => {
           type="semicircle"
           arc={{
             width: 0.2,
-            padding: 0.05,
-            cornerRadius: 10,
+            padding: 0,
+            cornerRadius: 1,
             subArcs: [
               { limit: 0, showTick: false },
               { limit: 16, color: '#FF5656', showTick: true, tooltip: { text: 'Not Interested' } },
@@ -62,18 +62,25 @@ const InterestLevelGauge = ({ data }) => {
                 fill:"#8204FF",
                 textShadow: "2px 2px 5px rgba(255, 255, 255, 0.3)",
               }
+              
             },
             tickLabels: {
               type: 'outer',
               defaultTickValueConfig: {
-                formatTextValue: (tickVal) => getInterestLabel(tickVal),
+                formatTextValue: (tickVal) => "",
                 style: { fontSize: 10, fill: "#9B9B9B" },
               },
+              
               defaultTickLineConfig: {
                 distanceFromArc: 0.55,
+                hide:true
               },
+              
             }
-          }}
+            // tickLabels:{
+            //   hide:true,
+            // }
+          }}  
           value={normalizedPercentage}
           minValue={0}
           maxValue={100}
