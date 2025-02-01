@@ -67,7 +67,7 @@ const CalendarSection = () => {
       </div>
       <div className="mt-6 text-center">
         <button 
-        className="bg-[#219653] text-white font-semibold py-2 px-4 rounded-lg hover:bg-[#1e874b] hover:text-white">
+        className="bg-[#8204FF] text-white font-semibold py-2 px-4 rounded-lg hover:bg-[#8204FF60] hover:text-white">
           Show call list {""}
           <span className="text-white ">
             (
@@ -117,7 +117,7 @@ const CallSummary = ({ data }) => {
         <tbody>
           {callData.map((call, index) => (
             <tr key={index} 
-              className=" hover:bg-gray-100 z-10 rounded-3xl" 
+              className=" hover:bg-gray-100 z-10 rounded-3xl cursor-pointer" 
               onClick={() => handleClick(call)} >  
 
               <td className="py-2 px-2 rounded-l-2xl">{call.Call_ID}</td>
@@ -232,7 +232,7 @@ const Dashboard = (excelData) => {
         <DashboardHead/>
         
         <div className="flex-1 bg-gray-100 p-6 mt-4">
-        <h1 className="text-3xl font-bold">Welcome, Shariq Shaikh</h1>
+        <h1 className="text-3xl font-bold">Welcome, <span className="text-[#8204FF]">Shariq Shaikh</span></h1>
         <p className="text-base text-gray-700 font-semibold">View progress and insights</p>
         <DashboardSummary  />
         <div className="flex flex-col lg:flex-row gap-6 mt-6  ">

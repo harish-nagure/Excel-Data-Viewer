@@ -127,7 +127,42 @@ const DataGraphCallScore = ({ data }) => {
     <div className='w-full h-96 pt-10'> 
       <Bar data={chartData} options={options} />
     </div>
+      {/* <div className="mt-6 mx-auto w-full flex justify-center items-center">
+        <GaugeComponent
+          arc={{
+            nbSubArcs: 6,
+            colorArray: colorArray,
+            width: 0.3,
+            padding: 20,
+          }}
+          labels={{
+            valueLabel: {
+              style: { fontSize: 32 },
+              formatTextValue: getInterestLabel,
+            },
+            tickLabels: {
+              type: "outer",
+              ticks: [
+                { value: 0 },
+                { value: 20 },
+                { value: 40 },
+                { value: 60 },
+                { value: 80 },
+                { value: 100 },
+              ],
+              defaultTickValueConfig: {
+                formatTextValue: getInterestLabel
+              }
+            },
+          }}
+          value={normalizedPercentage}
+          maxValue={100}
+        />
+      </div> */}
+
     </div>
+
+    
     
     
   );

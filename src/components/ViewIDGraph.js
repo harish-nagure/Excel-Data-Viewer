@@ -7,6 +7,9 @@ import DataGraphOverScore from './DataGraphOverScore';
 import DataGraphCallScore from './DataGraphCallScore';
 import InterestLevelGauge from './InterestLevelGauge';
 import DashboardHead from './DashboardHead';
+import Summary from './Summary';
+import AgentFeedback from './AgentFeedback';
+
 
 const ViewIDGraph = () => {
 
@@ -44,7 +47,14 @@ const ViewIDGraph = () => {
             <div className="bg-white p-6 rounded-2xl shadow-md">
               <InterestLevelGauge data={data} />
             </div>
+            <div className="bg-white p-6 rounded-2xl shadow-md">
+              <Summary data={data} />
+            </div>
+            
           </div>
+          <div className="bg-white p-6 rounded-2xl shadow-md mt-10">
+              <AgentFeedback  data={data} />
+            </div>
 
 
         </div>

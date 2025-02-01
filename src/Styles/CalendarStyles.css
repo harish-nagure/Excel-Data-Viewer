@@ -21,7 +21,7 @@
 }
 
 .custom-calendar .react-calendar__tile--now{
-  background-color: #219653 !important;
+  background-color: #8204FF !important;
   color: white !important; 
   font-weight: bold;
 }
@@ -41,23 +41,23 @@
 }
 
 .custom-calendar .react-calendar__tile:hover {
-  background-color: #c6f6d5 !important;
+  background-color: #8204FF50 !important;
   transform: scale(1.05); 
 }
 
 .custom-calendar .react-calendar__tile--rangeStart,
 .custom-calendar .react-calendar__tile--rangeEnd {
-  background-color: #219653 !important;
+  background-color: #8204FF60 !important;
   color: white;
   font-weight: bold;
 }
 
 .custom-calendar .react-calendar__tile--hover {
-  background-color: #d6f5e3 !important;
+  background-color: #8204FF30 !important;
 }
 
 .custom-calendar .react-calendar__tile--range {
-  background-color: #c6f6d5 !important;
+  background-color: #8204FF50 !important;
   color: #2d3748;
 }
 
@@ -72,7 +72,7 @@
 }
 
 .custom-calendar .react-calendar__navigation button:hover {
-  background-color: #c6f6d5 !important;
+  background-color: #8204FF50 !important;
 }
 
 .custom-calendar .react-calendar__month-view__days__day--weekend {
@@ -81,7 +81,7 @@
 
 .custom-calendar .react-calendar__month-view__weekdays {
   text-transform: uppercase;
-  color: #219653;
+  color: #8204FF;
   font-weight: bold;
   font-size: 0.8rem;
   padding-bottom: 4px;

@@ -22,8 +22,9 @@ const DataGraphOverScore = ({ data }) => {
       const centerX = (left + right) / 2; 
       const centerY = (top + bottom) / 2;
 
-      const score = overall_score;
-      const text = `${score.toFixed(0)}/5`;
+      const score = overall_score.toString()
+      ;
+      const text = `${score}/5`;
 
       const fontSize = 28; 
       ctx.save();
