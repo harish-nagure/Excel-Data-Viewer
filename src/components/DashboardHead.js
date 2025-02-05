@@ -7,25 +7,13 @@ const DashboardHead = () => {
     const [sidebarOpen, setSidebarOpen] = useState(false);
     const sidebarRef = useRef(null);
 
-    // // Close sidebar when clicking outside
-    /* eslint-disable no-unused-vars */
-    // useEffect(() => {
-    //     const handleClickOutside = (event) => {
-    //         if (sidebarRef.current && !sidebarRef.current.contains(event.target)) {
-    //             setSidebarOpen(false);
-    //         }
-    //     };
-    //     document.addEventListener("mousedown", handleClickOutside);
-    //     return () => {
-    //         document.removeEventListener("mousedown", handleClickOutside);
-    //     };
-    // }, []);
+   
 
     return (
         <div>
             {/* Sidebar for Mobile*/}
             <div 
-                ref={sidebarRef} 
+                // ref={sidebarRef} 
                 className={`bg-white lg:hidden h-screen fixed z-20 transition-transform duration-300 ${sidebarOpen ? "translate-x-0" : "-translate-x-full"}`}
             >
                 <DashboardSidebar />
