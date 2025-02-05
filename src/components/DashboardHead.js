@@ -8,6 +8,7 @@ const DashboardHead = () => {
     const sidebarRef = useRef(null);
 
     // // Close sidebar when clicking outside
+    /* eslint-disable no-unused-vars */
     // useEffect(() => {
     //     const handleClickOutside = (event) => {
     //         if (sidebarRef.current && !sidebarRef.current.contains(event.target)) {
