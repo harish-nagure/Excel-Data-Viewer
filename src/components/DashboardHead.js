@@ -1,14 +1,17 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState } from 'react';
 import { IoSearch, IoLogOutOutline, IoNotificationsOutline, IoChevronDownSharp } from "react-icons/io5";
 import { TiThMenu,TiArrowBack } from "react-icons/ti";
 import DashboardSidebar from './DashboardSidebar';
 
 const DashboardHead = () => {
     const [sidebarOpen, setSidebarOpen] = useState(false);
-    const sidebarRef = useRef(null);
+    
 
    
 
+   
+
+    
     return (
         <div>
             {/* Sidebar for Mobile*/}
