@@ -17,10 +17,9 @@ import LogoDash from "../Image/logo_dash.png";
 const DashboardSidebar = () => {
     return (
       <aside className="w-80 h-screen bg-slate p-4 flex flex-col overflow-y-auto">
-        {/* <div className="text-xl font-bold mb-8">Callify</div> */}
         <img src={LogoDash} alt="profile" className="w-32 mb-5 h-11 " />
   
-          <div className="flex items-center rounded-md px-3 py-2 w-full max-w-md border border-gray-300 shadow-2xl hover:border-black">
+          <div className="hidden lg:flex items-center rounded-md px-3 py-2 w-full max-w-md border border-gray-300 shadow-2xl hover:border-black">
           <IoSearch className="text-gray-500 mr-3 size-5" />
           <input
               type="text"
@@ -33,7 +32,7 @@ const DashboardSidebar = () => {
         <ul className="pl-2 text-base">
           <li className="py-1 text-gray-700 hover:text-gray-900 flex items-center">
             <AiFillHome className="mr-2 size-5" />
-            <a href="/">Dashboard</a>
+            <a href="/dashboard">Dashboard</a>
           </li>
           <li className="py-1 text-gray-700 hover:text-gray-900 flex items-center">
             <PiCalendarStarBold className="mr-2  size-5" />

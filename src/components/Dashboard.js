@@ -10,7 +10,6 @@ import { IoBarChartOutline, IoBagCheck } from "react-icons/io5";
 import { LuClock } from "react-icons/lu";
 
 
-
 import ProductImg from "../Image/product.png";
 
 import DashboardSidebar from "./DashboardSidebar";
@@ -20,18 +19,18 @@ import DashboardSidebar from "./DashboardSidebar";
 import DashboardOverAllGraph from "./DashboardOverAllGraph";
 import DashboardHead from "./DashboardHead";
 
-
-
-
-
 const DashboardSummary = () => {
   return (
-    <div className="grid grid-cols-3 gap-6 mt-6">
+    <div className="grid lg:grid-cols-3 md:grid-flow-row w-full gap-6 mt-6">
+
       <div className="bg-white p-6 rounded-lg shadow">
+
         <div className="mb-3 w-fit rounded-full p-3" style={{background:"#D398E7"}}>
-            <IoBarChartOutline className=" text-slate-50 text-2xl"/></div>
+            <IoBarChartOutline className=" text-slate-50 text-2xl"/>
+        </div>
         <h3 className="text-sm text-gray-600">Daily Call Accomplished</h3>
         <p className="text-3xl font-bold my-1">$53,00989</p>
+
       </div>
 
       <div className="bg-white p-6 rounded-lg shadow">
@@ -55,7 +54,8 @@ const CalendarSection = () => {
   const [date, setDate] = useState([new Date(), new Date()]);
 
   return (
-    <div className="flex-1 w-full justify-center items-center lg:max-w-sm md:max-w-fit  bg-white p-4 rounded-lg shadow">
+    <div className="flex justify-center">
+    <div className="flex-1 w-full justify-center items-center lg:max-w-sm md:max-w-fit bg-white p-4 rounded-lg shadow">
       <h2 className="text-lg font-bold mb-4">Calls Overview</h2>
       <div className="flex items-center justify-center">
       <Calendar
@@ -79,7 +79,7 @@ const CalendarSection = () => {
       </div>
 
     </div>
-    
+    </div>
   );
 };
 
@@ -88,6 +88,8 @@ const CallSummary = ({ data }) => {
   const navigate  = useNavigate();
 
   const callData = data?.excelData || [];
+  
+  console.log(data);
 
   const handleClick = (call) => {
     console.log("Call Data:", call);
@@ -101,7 +103,7 @@ const CallSummary = ({ data }) => {
   // console.log("Call Data:", callData);
 
   return (
-    <div className="flex-1 bg-white p-6 rounded-lg shadow ">
+    <div className="lg:flex-1 bg-white p-6 rounded-lg shadow">
       <h2 className="text-lg font-bold mb-4">Call Summary</h2>
       <table className="w-full text-sm text-left ">
         <thead>
@@ -218,32 +220,92 @@ const ProductRecommendations = () => {
 
 };
 
-const Dashboard = (excelData) => {
- 
-  return (
 
-    
-    <div className="flex font-inter">
-      <div className="bg-white w-80 h-screen fixed ">
-      <DashboardSidebar />
-      </div>
+
+// const Dashboard = (excelData) => {
+  
+//     return (
+
       
-      <main className="flex-1 ml-80" style={{ backgroundColor: "#F5F6FA" }}>
-        <DashboardHead/>
+//       <div className="flex font-inter">
+//         <div className="bg-white h-screen fixed ">
+//         <DashboardSidebar />
+//         </div>
         
-        <div className="flex-1 bg-gray-100 p-6 mt-4">
-        <h1 className="text-3xl font-bold">Welcome, <span className="text-[#8204FF]">Shariq Shaikh</span></h1>
-        <p className="text-base text-gray-700 font-semibold">View progress and insights</p>
-        <DashboardSummary  />
-        <div className="flex flex-col lg:flex-row gap-6 mt-6  ">
+//         <main className="flex-1 ml-80" style={{ backgroundColor: "#F5F6FA" }}>
+//           <DashboardHead/>
+          
+//           <div className="flex-1 bg-gray-100 p-6 mt-4">
+//           <h1 className="text-3xl font-bold">Welcome, <span className="text-[#8204FF]">Shariq Shaikh</span></h1>
+//           <p className="text-base text-gray-700 font-semibold">View progress and insights</p>
+//           <DashboardSummary  />
+//           <div className="flex flex-col lg:flex-row gap-6 mt-6  ">
+//               <CallSummary data={excelData}/>
+//               <CalendarSection />
+//           </div>
+//           <ProductRecommendations />
+//           </div>
+//         </main>
+//       </div>
+//     );
+//   };
+
+// const Dashboard = (excelData) => {
+//   const [sidebarOpen, setSidebarOpen] = useState(false);
+
+//   return (
+//     <div className="flex font-inter">
+//       <div className="bg-white h-screen hidden lg:block">
+//         <DashboardSidebar />
+//       </div>
+
+//       <MobileSidebar isOpen={sidebarOpen} onClose={() => setSidebarOpen(false)} />
+
+//       <main className="flex-1 lg:ml-80" style={{ backgroundColor: "#F5F6FA" }}>
+//         <DashboardHead />
+//         <div className="flex items-center justify-between p-6 lg:hidden">
+//           <h1 className="text-2xl font-bold">Welcome, <span className="text-[#8204FF]">Shariq Shaikh</span></h1>
+//           <TiThMenu onClick={() => setSidebarOpen(!sidebarOpen)} className="text-2xl cursor-pointer" />
+//         </div>
+
+//         <div className="flex-1 bg-gray-100 p-6 mt-4">
+//           <p className="text-base text-gray-700 font-semibold">View progress and insights</p>
+//           <DashboardSummary />
+//           <div className="flex flex-col lg:flex-row gap-6 mt-6">
+//             {/* Assuming CallSummary is defined and integrated */}
+//             <CalendarSection />
+//           </div>
+//         </div>
+//       </main>
+//     </div>
+//   );
+// };
+
+const Dashboard = (excelData) => {
+
+  return (
+    <div className="flex font-inter">
+      <div className="bg-white h-screen hidden lg:block fixed z-20">
+        <DashboardSidebar />
+      </div>
+
+      <main className="flex-1 lg:ml-80" style={{ backgroundColor: "#F5F6FA" }}>
+        <DashboardHead />
+        <div className="flex-1 bg-gray-100 p-6 mt-4 w-full">
+          <h1 className="text-3xl font-bold">Welcome, <span className="text-[#8204FF]">Shariq Shaikh</span></h1>
+          <p className="text-base text-gray-700 font-semibold">View progress and insights</p>
+          <DashboardSummary />
+
+          <div className="flex flex-col lg:flex-row gap-6 mt-6">
             <CallSummary data={excelData}/>
             <CalendarSection />
-        </div>
-        <ProductRecommendations />
+          </div>
+          <ProductRecommendations />
         </div>
       </main>
     </div>
   );
 };
+
 
 export default Dashboard;

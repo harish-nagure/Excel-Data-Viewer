@@ -23,11 +23,11 @@ const ViewIDGraph = () => {
     return (
       <div className="flex font-inter">
 
-      <div className="bg-white w-80 h-screen fixed ">
-      <DashboardSidebar />
+      <div className="bg-white h-screen hidden lg:block fixed z-20">
+        <DashboardSidebar />
       </div>
       
-      <main className="flex-1 ml-80" style={{ backgroundColor: "#F5F6FA" }}>
+      <main className="flex-1 lg:ml-80" style={{ backgroundColor: "#F5F6FA" }}>
         <DashboardHead/>
 
 

@@ -77,9 +77,7 @@ const InterestLevelGauge = ({ data }) => {
               },
               
             }
-            // tickLabels:{
-            //   hide:true,
-            // }
+            
           }}  
           value={normalizedPercentage}
           minValue={0}
