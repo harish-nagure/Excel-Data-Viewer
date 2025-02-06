@@ -196,7 +196,7 @@ const CallSummary = ({ data }) => {
   return (
     <div className="lg:flex-1 bg-white p-4 rounded-lg shadow">
       <h2 className="lg:text-xl font-bold mb-4 md:text-4xl md:p-4 lg:p-2">Call Summary</h2>
-      <div className="overflow-x-auto overflow-y-auto w-full">
+      <div className="overflow-x-auto overflow-full">
         <table className="lg:min-w-full md:min-w-[1500px] lg:text-sm md:text-3xl text-left">
           <thead>
             <tr className="border-b">
