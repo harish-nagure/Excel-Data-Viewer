@@ -1,7 +1,5 @@
 import React from 'react';
 import { useLocation } from 'react-router-dom';
-
-
 import DashboardSidebar from './DashboardSidebar';
 import DataGraphOverScore from './DataGraphOverScore';
 import DataGraphCallScore from './DataGraphCallScore';
@@ -10,57 +8,53 @@ import DashboardHead from './DashboardHead';
 import Summary from './Summary';
 import AgentFeedback from './AgentFeedback';
 
-
 const ViewIDGraph = () => {
+  const location = useLocation();
+  const data = location.state;
 
-    const location = useLocation(); 
-    const data = location.state;
-    console.log(data);
-    // const navigate = useNavigate();
+  return (
+    <div className="flex font-inter min-h-screen">
 
-  
-
-    return (
-      <div className="flex font-inter">
-
-      <div className="bg-white h-screen hidden lg:block fixed z-20">
+      {/* Sidebar hidden on smaller screens */}
+      <div className="bg-white h-screen hidden lg:block fixed z-20 w-72">
         <DashboardSidebar />
       </div>
-      
+
       <main className="flex-1 lg:ml-80" style={{ backgroundColor: "#F5F6FA" }}>
-        <DashboardHead/>
+        <DashboardHead />
 
+        <div className="bg-gray-100 p-4 md:p-8 mt-4 rounded-lg">
+          <h1 className="text-xl md:text-3xl font-bold">
+            Call <span className="text-[#8204FF]">Statistics</span>
+          </h1>
+          <p className="text-sm md:text-base text-gray-700 font-semibold">
+            Track Call Progress and Insights
+          </p>
 
-        <div className="bg-gray-100 p-8 mt-4">
-          <h1 className="text-3xl font-bold">Call <span className="text-[#8204FF]">Statistics</span></h1>
-          <p className="text-base text-gray-700 font-semibold">Track Call Progress and Insights</p>
-
-        
-          <div className="grid lg:grid-cols-2 gap-6 mt-8 items-center h-full 3xl:grid-cols-3">
-
-            <div className="bg-white p-6 rounded-2xl shadow-md">
+          {/* Responsive Grid Layout */}
+          <div className="grid gap-4 mt-6 md:gap-6 items-center grid-cols-1 md:grid-cols-2 3xl:grid-cols-3">
+            <div className="bg-white p-4 md:p-6 rounded-2xl shadow-md">
               <DataGraphCallScore data={data} />
             </div>
-            <div className="bg-white p-6 rounded-2xl shadow-md">
+            <div className="bg-white p-4 md:p-6 rounded-2xl shadow-md">
               <DataGraphOverScore data={data} />
             </div>
-            <div className="bg-white p-6 rounded-2xl shadow-md">
+            <div className="bg-white p-4 md:p-6 rounded-2xl shadow-md">
               <InterestLevelGauge data={data} />
             </div>
-            <div className="bg-white p-6 rounded-2xl shadow-md">
+            <div className="bg-white p-4 md:p-6 rounded-2xl shadow-md">
               <Summary data={data} />
             </div>
-            
-          </div>
-          <div className="bg-white p-6 rounded-2xl shadow-md mt-10">
-            <AgentFeedback  data={data} />
           </div>
 
-
+          {/* Agent Feedback Section */}
+          <div className="bg-white p-4 md:p-6 rounded-2xl shadow-md mt-6">
+            <AgentFeedback data={data} />
+          </div>
         </div>
       </main>
     </div>
-    );
+  );
 };
 
 export default ViewIDGraph;

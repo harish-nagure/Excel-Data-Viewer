@@ -97,13 +97,13 @@
 
   .custom-calendar .react-calendar__tile {
     padding: 14px;
-    font-size: 1.4rem;
+    font-size: 1rem;
   }
 
 
   .custom-calendar .react-calendar__navigation button {
     padding: 10px 18px;
-    font-size: 1.4rem;
+    font-size: 1rem;
   }
 }
 
@@ -115,7 +115,7 @@
 
   .custom-calendar .react-calendar__tile {
     padding: 10px;
-    font-size: 1.2rem;
+    font-size: 1rem;
   }
 
   abbr {
@@ -124,6 +124,6 @@
 
   .custom-calendar .react-calendar__navigation button {
     padding: 6px 10px;
-    font-size: 1.2rem;
+    font-size: 0.9rem;
   }
 }
