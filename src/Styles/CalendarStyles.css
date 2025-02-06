@@ -1,5 +1,5 @@
 .custom-calendar {
-  border:none; 
+  border: none;
   border-radius: 12px;
   padding: 4px;
   background-color: #ffffff;
@@ -8,32 +8,31 @@
   align-items: center;
   text-align: center;
   justify-content: center;
+  max-width: 100%;
 }
 
 .react-calendar,
-.react-calendar *,
-.react-calendar *:before,
-.react-calendar *:after {
+.react-calendar * {
   box-sizing: border-box;
   text-decoration: none;
   align-items: center;
   text-align: center;
 }
 
-.custom-calendar .react-calendar__tile--now{
+.custom-calendar .react-calendar__tile--now {
   background-color: #8204FF !important;
-  color: white !important; 
+  color: white !important;
   font-weight: bold;
 }
 
-.custom-calendar .react-calendar__tile--now:hover{
-  color: black !important; 
+.custom-calendar .react-calendar__tile--now:hover {
+  color: black !important;
   font-weight: bold;
 }
 
 .custom-calendar .react-calendar__tile {
   padding: 12px;
-  font-size: 0.95rem;
+  font-size: 1rem;
   color: #171717;
   background-color: transparent;
   border-radius: 8px;
@@ -42,7 +41,7 @@
 
 .custom-calendar .react-calendar__tile:hover {
   background-color: #8204FF50 !important;
-  transform: scale(1.05); 
+  transform: scale(1.05);
 }
 
 .custom-calendar .react-calendar__tile--rangeStart,
@@ -86,4 +85,45 @@
   font-size: 0.8rem;
   padding-bottom: 4px;
   outline: none;
+}
+
+/* Responsive Design Media Queries */
+@media (max-width: 900px) {
+  .custom-calendar {
+    padding: 8px 10px;
+    border-radius: 8px;
+  }
+ 
+
+  .custom-calendar .react-calendar__tile {
+    padding: 14px;
+    font-size: 1.4rem;
+  }
+
+
+  .custom-calendar .react-calendar__navigation button {
+    padding: 10px 18px;
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .custom-calendar {
+    padding: 6px;
+    max-width: 100%;
+  }
+
+  .custom-calendar .react-calendar__tile {
+    padding: 10px;
+    font-size: 1.2rem;
+  }
+
+  abbr {
+    font-size: 1rem;
+  }
+
+  .custom-calendar .react-calendar__navigation button {
+    padding: 6px 10px;
+    font-size: 1.2rem;
+  }
 }

@@ -30,7 +30,6 @@ const Summary = ({ excelData }) => {
         <div className=" flex w-8 h-8 text-gray-700 mr-2 bg-white rounded-full items-center justify-center">
         <RiRobot2Line className='w-5 h-5'  />
         </div>
-      
           <h6 className="text-sm font-semibold text-gray-700">AI Summary</h6>
         </div>
 

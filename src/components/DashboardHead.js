@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 import React, { useState } from 'react';
+=======
+import React, { useState, useRef } from 'react';
+>>>>>>> a1255a5 (Mobile view 2)
 import { IoSearch, IoLogOutOutline, IoNotificationsOutline, IoChevronDownSharp } from "react-icons/io5";
 import { TiThMenu,TiArrowBack } from "react-icons/ti";
 import DashboardSidebar from './DashboardSidebar';
@@ -27,11 +31,11 @@ const DashboardHead = () => {
             </div>
 
             {/* Header */}
-            <div className="w-full lg:h-16 md:h-20 bg-white px-4 flex items-center justify-between border-b border-gray-200">
+            <div className="w-auto lg:h-16 md:h-24 bg-white lg:px-4 md:px-16 flex items-center justify-between border-b border-gray-200">
 
                 {/* Mobile Sidebar Toggle */}
-                <div className="flex items-center justify-between pl-6 lg:hidden">
-                    <TiThMenu onClick={() => setSidebarOpen(!sidebarOpen)} className="text-2xl cursor-pointer" />
+                <div className="flex items-center justify-between lg:hidden">
+                    <TiThMenu onClick={() => setSidebarOpen(!sidebarOpen)} className="text-5xl cursor-pointer" />
                 </div>
 
                 {/* Search Bar */}
@@ -51,7 +55,7 @@ const DashboardHead = () => {
                     </button>
                     
                     <button>
-                        <IoLogOutOutline className="text-gray-800 lg:text-xl md:hidden hover:text-violet-800" />
+                    <IoLogOutOutline className="text-gray-800 text-xl hover:text-violet-800 lg:block md:hidden" />
                     </button>
 
                     <div className="flex flex-row items-center gap-1">

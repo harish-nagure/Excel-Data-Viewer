@@ -34,10 +34,10 @@ function Login() {
   return (
     <div className="flex h-screen">
       {/* Left Panel */}
-      <div className="bg-[#C4C4C4] w-1/2 hidden md:flex "></div>
+      <div className="bg-[#C4C4C4] w-1/2 hidden lg:flex "></div>
 
       {/* Right Panel */}
-      <div className="bg-white w-full md:w-1/2 flex items-center justify-center">
+      <div className="w-full lg:w-1/2 lg:flex items-center justify-center px-4 md:px-10 md:text-center">
         <div className="w-4/5 max-w-md text-center">
           <div className="mb-10 text-left">
             <img src={logoImage} alt="Logo" className="w-16 h-16 mb-4" />
