@@ -25,35 +25,37 @@ function Login() {
       setError("Please enter a valid email address.");
     } else {
       setError("");
-      // console.log("Login successful!");
       navigate('/dashboard');
-      
     }
   };
 
   return (
-    <div className="flex h-screen">
-      {/* Left Panel */}
-      <div className="bg-[#C4C4C4] w-1/2 hidden lg:flex "></div>
+    <div className="flex flex-col justify-center md:flex-row h-screen">
+      {/* Left Panel (Hidden on Small Screens) */}
+      <div className="hidden md:flex w-1/2" style={{ backgroundColor: "#8204FF", backgroundImage: "none", backgroundSize: "cover", backgroundRepeat: "no-repeat" }}></div>
 
-      {/* Right Panel */}
-      <div className="w-full lg:w-1/2 lg:flex items-center justify-center px-4 md:px-10 md:text-center">
-        <div className="w-4/5 max-w-md text-center">
-          <div className="mb-10 text-left">
+
+
+      {/* Right Panel (Login Form) */}
+      <div className="w-full md:w-1/2 flex items-center justify-center p-6">
+        <div className="w-full max-w-md text-center">
+          <div className="mb-6 text-left">
             <img src={logoImage} alt="Logo" className="w-16 h-16 mb-4" />
-            <h1 className="text-4xl font-bold text-gray-800 mb-2">Login to your Account</h1>
+            <h1 className="text-3xl md:text-4xl font-bold text-gray-800 mb-2">Login to your <span style={{color:"#8204FF"}}>Account</span> </h1>
             <p className="text-gray-600 text-base">See what is going on with your business</p>
           </div>
 
+          {/* Google Login Button */}
           <button className="w-full flex items-center justify-center bg-white text-[#828282] border border-gray-300 rounded-lg py-2 mb-6 hover:bg-gray-100 transition">
             <FcGoogle className="w-6 h-6 mr-2" />
             Continue with Google
           </button>
 
-          <p className="text-sm text-gray-400 mb-6">------------- or Sign in with Email ------------- </p>
+          <p className="text-sm text-gray-400 mb-6">—— or Sign in with Email ——</p>
 
           {error && <p className="text-red-500 text-sm mb-4">{error}</p>}
 
+          {/* Login Form */}
           <form onSubmit={handleSubmit} className="space-y-4">
             <div className="text-left">
               <label htmlFor="email" className="block text-gray-600 font-medium">Email</label>
@@ -95,14 +97,14 @@ function Login() {
 
             <button
               type="submit"
-              className="w-full bg-black font-bold text-white py-2 rounded-2xl hover:bg-gray-800 transition"
+              className="w-full font-bold text-white py-2 rounded-2xl hover:bg-gray-800 transition" style={{backgroundColor:"#8204FF"}}
             >
               Login
             </button>
           </form>
 
-          <p className="mt-6 text-base  text-gray-600">
-            Not Registered Yet? <a href="/" className="text-black font-bold hover:underline">Create an account</a>
+          <p className="mt-6 text-base text-gray-600">
+            Not Registered Yet? <a href="/" className=" font-bold hover:underline" style={{color:"#8204FF"}}>Create an account</a>
           </p>
         </div>
       </div>
