@@ -3,6 +3,8 @@ import React, { useState } from 'react';
 =======
 import React, { useState, useRef } from 'react';
 >>>>>>> a1255a5 (Mobile view 2)
+
+
 import { IoSearch, IoLogOutOutline, IoNotificationsOutline, IoChevronDownSharp } from "react-icons/io5";
 import { TiThMenu,TiArrowBack } from "react-icons/ti";
 import DashboardSidebar from './DashboardSidebar';
