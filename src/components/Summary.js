@@ -5,7 +5,7 @@ import { RiRobot2Line } from 'react-icons/ri';
 
 const Summary = ({ excelData }) => {
   const location = useLocation();
-  const call = location.state; // Get the call data from navigation
+  const call = location.state;
 
   const [summary, setSummary] = useState('');
 

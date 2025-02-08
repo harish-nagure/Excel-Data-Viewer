@@ -1,5 +1,7 @@
 import React from 'react';
 import { useLocation } from 'react-router-dom';
+
+
 import DashboardSidebar from './DashboardSidebar';
 import DataGraphOverScore from './DataGraphOverScore';
 import DataGraphCallScore from './DataGraphCallScore';
@@ -7,6 +9,7 @@ import InterestLevelGauge from './InterestLevelGauge';
 import DashboardHead from './DashboardHead';
 import Summary from './Summary';
 import AgentFeedback from './AgentFeedback';
+import AgentInfo from './AgentInfo';
 
 const ViewIDGraph = () => {
   const location = useLocation();
@@ -45,12 +48,19 @@ const ViewIDGraph = () => {
             <div className="bg-white p-4 md:p-6 rounded-2xl shadow-md">
               <Summary data={data} />
             </div>
+            <div className="bg-white p-4 md:p-6 rounded-2xl shadow-md">
+              <AgentInfo data1={data} />
+            </div>
+            
           </div>
 
           {/* Agent Feedback Section */}
           <div className="bg-white p-4 md:p-6 rounded-2xl shadow-md mt-6">
             <AgentFeedback data={data} />
           </div>
+          
+
+
         </div>
       </main>
     </div>

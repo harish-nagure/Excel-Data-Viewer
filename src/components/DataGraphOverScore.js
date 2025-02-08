@@ -8,8 +8,10 @@ const DataGraphOverScore = ({ data }) => {
 
 
   const overall_score = data['Overall Call score'];
+  
   const scorePercentage = (overall_score / 5) * 100;
-  const colorLabel =['rgba(130, 4, 255, 0.94)','rgba(198, 134, 248, 0.4)']
+  const colorLabel =['rgba(130, 4, 255, 0.94)','rgba(198, 134, 248, 0.4)'];
+
   const centerTextPlugin = {
     id: 'centerText',
     afterDraw: (chart) => {
