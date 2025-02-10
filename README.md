@@ -29,7 +29,10 @@ A React-based application to visualize and interact with Excel data using data t
    ```
 4. Install additional required packages:
    ```bash
-   npm install xlsx react-table react-chartjs-2 chart.js moment
+   <!-- npm install xlsx react-table react-chartjs-2 chart.js moment -->
+   npm install @fontsource/inter chart.js moment react-calendar react-chartjs-2 react-gauge-chart react-gauge-component react-icons react-router-dom react-table web-vitals xlsx
+
+   npm install autoprefixer postcss tailwindcss 
    ```
 
 ---
@@ -75,7 +78,10 @@ The project uses the following key dependencies:
 - [react-router-dom](https://): For Navigation data and page.
 - [react-icons](https://react-icons.github.io/react-icons/):For Icons.
 - [react-calendar](https://): For Date and page.
-- [react-gauge-chart](https://):Gauge chart.
+- [react-gauge-chart](https://): Gauge chart.
+- [react-gauge-component](https://): Gauge component chart.
+- [@fontsource/inter]
+
 
 
 ---
