@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import "tailwindcss/tailwind.css";
 
 
@@ -15,6 +16,7 @@ import LogoDash from "../Image/logo_dash.png";
 
 
 const DashboardSidebar = () => {
+    const navigate = useNavigate();
     return (
       <aside className="w-80 h-screen bg-slate p-4 flex flex-col overflow-y-auto">
         <img src={LogoDash} alt="profile" className="w-32 mb-5 h-11 " />
@@ -30,29 +32,32 @@ const DashboardSidebar = () => {
         
         <div className="flex text-gray-400 mb-2 mt-6 text-sm font-semibold ">General</div>  
         <ul className="pl-2 text-base">
-          <li className="py-1 text-gray-700 hover:text-gray-900 flex items-center">
+          <li className="py-1 text-gray-700 hover:text-gray-900 flex items-center cursor-pointer"
+              onClick={() => navigate("/dashboard")}>
             <AiFillHome className="mr-2 size-5" />
-            <a href="/dashboard">Dashboard</a>
+            <p>Dashboard</p>
           </li>
           <li className="py-1 text-gray-700 hover:text-gray-900 flex items-center">
             <PiCalendarStarBold className="mr-2  size-5" />
-            <a href="/">Leads</a>
+            <p>Leads</p>
           </li>
-          <li className="py-1 text-gray-700 hover:text-gray-900 flex items-center">
+          <li className="py-1 text-gray-700 hover:text-gray-900 flex items-center"
+            onClick={() => navigate("/add_product")}>
+            
             <MdOutlineAnalytics    className="mr-2 size-5" />
-            <a href="/add_product">Add Product</a>
+            <p>Add Product</p>
           </li>
           <li className="py-1 text-gray-700 hover:text-gray-900 flex items-center">
             <HiOutlineNewspaper className="mr-2 size-5" />
-            <a href="/">News</a>
+            <p>News</p>
           </li>
           <li className="py-1 text-gray-700 hover:text-gray-900 flex items-center">
             <IoBagRemoveOutline className="mr-2 size-5" />
-            <a href="/">Recruitment</a>
+            <p>Recruitment</p>
           </li>
           <li className="py-2 text-gray-700 hover:text-gray-900 flex items-center">
             <PiFolders  className="mr-2 size-5" />
-            <a href="/">Projects</a> 
+            <p>Projects</p> 
           </li>
         </ul>
         <hr className="border-gray-300 my-3"/>
@@ -62,15 +67,15 @@ const DashboardSidebar = () => {
         <ul className="pl-2 text-base">
           <li className="py-1 text-gray-700 hover:text-gray-900 flex items-center">
             <FaRegFlag className="mr-2 size-5" />
-            <a href="/">Activity</a>
+            <p>Activity</p>
           </li>
           <li className="py-1 text-gray-700 hover:text-gray-900 flex items-center">
             <IoPeopleOutline className="mr-2  size-5" />
-            <a href="/">Shared</a>
+            <p>Shared</p>
           </li>
           <li className="py-1 text-gray-700 hover:text-gray-900 flex items-center">
             <GoShieldCheck className="mr-2 size-5" />
-            <a href="/">Privary</a>
+            <p>Privary</p>
           </li>
         </ul>
         <hr className="border-gray-300 my-3"/>
@@ -79,15 +84,15 @@ const DashboardSidebar = () => {
         <ul className="pl-2 text-base">
           <li className="py-1 text-gray-700 hover:text-gray-900 flex items-center">
             <IoSettingsOutline className="mr-2 size-5" />
-            <a href="/">Setting</a>
+            <p>Setting</p>
           </li>
           <li className="py-1 text-gray-700 hover:text-gray-900 flex items-center">
             <LuBadgeHelp className="mr-2  size-5" />
-            <a href="/">Help!</a>
+            <p>Help!</p>
           </li>
           <li className="py-1 text-gray-700 hover:text-gray-900 flex items-center">
             <HiOutlineChatBubbleLeftRight className="mr-2 size-5" />
-            <a href="/">Chat</a>
+            <p>Chat</p>
           </li>
         </ul>
         <hr className="border-gray-300 my-3"/>
