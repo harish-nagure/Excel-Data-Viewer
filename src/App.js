@@ -5,7 +5,7 @@ import Home from "./components/Home";
 import ViewIDGraph from "./components/ViewIDGraph";
 import Dashboard from "./components/Dashboard";
 import LocalExcelReader from "./components/LocalExcelReader";
-
+import AddProduct from "./components/AddProduct"
 import Login from "./components/Login";
 
   
@@ -23,6 +23,7 @@ const App = () => {
         <Route path="/home" element={<Home excelData={excelData} />} />
         <Route path="/dashboard" element={<Dashboard excelData={excelData} />} />
         <Route path="/viewIDdetails" element={<ViewIDGraph excelData={excelData} />} /> 
+        <Route path="/add_product" element={<AddProduct />}/>
       </Routes>
     ) : (
       <div className="flex items-center justify-center h-screen">

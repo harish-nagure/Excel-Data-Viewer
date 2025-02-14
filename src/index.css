@@ -7,3 +7,22 @@ body{
     font-family: 'Inter', sans-serif;
 }
 
+@layer utilities {
+
+  .scrollbar-thin::-webkit-scrollbar {
+    margin-top: 2px;
+    height: 3px;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-track {
+    @apply bg-gray-200 rounded-lg;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    @apply bg-[#90119B] rounded-lg;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb:hover {
+    @apply bg-[#6b0e7a];
+  }
+}

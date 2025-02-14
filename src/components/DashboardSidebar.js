@@ -40,7 +40,7 @@ const DashboardSidebar = () => {
           </li>
           <li className="py-1 text-gray-700 hover:text-gray-900 flex items-center">
             <MdOutlineAnalytics    className="mr-2 size-5" />
-            <a href="/">Analytics</a>
+            <a href="/add_product">Add Product</a>
           </li>
           <li className="py-1 text-gray-700 hover:text-gray-900 flex items-center">
             <HiOutlineNewspaper className="mr-2 size-5" />
