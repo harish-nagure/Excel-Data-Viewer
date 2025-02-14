@@ -37,25 +37,25 @@ const DashboardSidebar = () => {
             <AiFillHome className="mr-2 size-5" />
             <p>Dashboard</p>
           </li>
-          <li className="py-1 text-gray-700 hover:text-gray-900 flex items-center">
+          <li className="py-1 text-gray-700 hover:text-gray-900 flex items-center cursor-pointer">
             <PiCalendarStarBold className="mr-2  size-5" />
             <p>Leads</p>
           </li>
-          <li className="py-1 text-gray-700 hover:text-gray-900 flex items-center"
+          <li className="py-1 text-gray-700 hover:text-gray-900 flex items-center cursor-pointer"
             onClick={() => navigate("/add_product")}>
             
             <MdOutlineAnalytics    className="mr-2 size-5" />
             <p>Add Product</p>
           </li>
-          <li className="py-1 text-gray-700 hover:text-gray-900 flex items-center">
+          <li className="py-1 text-gray-700 hover:text-gray-900 flex items-center cursor-pointer">
             <HiOutlineNewspaper className="mr-2 size-5" />
             <p>News</p>
           </li>
-          <li className="py-1 text-gray-700 hover:text-gray-900 flex items-center">
+          <li className="py-1 text-gray-700 hover:text-gray-900 flex items-center cursor-pointer">
             <IoBagRemoveOutline className="mr-2 size-5" />
             <p>Recruitment</p>
           </li>
-          <li className="py-2 text-gray-700 hover:text-gray-900 flex items-center">
+          <li className="py-2 text-gray-700 hover:text-gray-900 flex items-center cursor-pointer">
             <PiFolders  className="mr-2 size-5" />
             <p>Projects</p> 
           </li>
@@ -65,15 +65,15 @@ const DashboardSidebar = () => {
   
         <div className="flex text-gray-400 mb-2 text-sm font-semibold ">MySpace</div>  
         <ul className="pl-2 text-base">
-          <li className="py-1 text-gray-700 hover:text-gray-900 flex items-center">
+          <li className="py-1 text-gray-700 hover:text-gray-900 flex items-center cursor-pointer">
             <FaRegFlag className="mr-2 size-5" />
             <p>Activity</p>
           </li>
-          <li className="py-1 text-gray-700 hover:text-gray-900 flex items-center">
+          <li className="py-1 text-gray-700 hover:text-gray-900 flex items-center cursor-pointer">
             <IoPeopleOutline className="mr-2  size-5" />
             <p>Shared</p>
           </li>
-          <li className="py-1 text-gray-700 hover:text-gray-900 flex items-center">
+          <li className="py-1 text-gray-700 hover:text-gray-900 flex items-center cursor-pointer">
             <GoShieldCheck className="mr-2 size-5" />
             <p>Privary</p>
           </li>
@@ -82,15 +82,15 @@ const DashboardSidebar = () => {
   
         <div className="flex text-gray-400 mb-2 text-sm font-semibold ">Support</div>  
         <ul className="pl-2 text-base">
-          <li className="py-1 text-gray-700 hover:text-gray-900 flex items-center">
+          <li className="py-1 text-gray-700 hover:text-gray-900 flex items-center cursor-pointer">
             <IoSettingsOutline className="mr-2 size-5" />
             <p>Setting</p>
           </li>
-          <li className="py-1 text-gray-700 hover:text-gray-900 flex items-center">
+          <li className="py-1 text-gray-700 hover:text-gray-900 flex items-center cursor-pointer">
             <LuBadgeHelp className="mr-2  size-5" />
             <p>Help!</p>
           </li>
-          <li className="py-1 text-gray-700 hover:text-gray-900 flex items-center">
+          <li className="py-1 text-gray-700 hover:text-gray-900 flex items-center cursor-pointer">
             <HiOutlineChatBubbleLeftRight className="mr-2 size-5" />
             <p>Chat</p>
           </li>
