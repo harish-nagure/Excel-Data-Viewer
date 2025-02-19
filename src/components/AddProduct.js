@@ -44,11 +44,11 @@ const UploadFiles = ({ onFilesUpload }) => {
       </div>
 
       <div
-        className="border border-dashed bg-[#FDF6FE] border-[#90119B] p-4 rounded-lg text-center cursor-pointer hover:border-double hover:bg-[#fdf6fec7]"
+        className="border border-dashed bg-[#FDF6FE] border-primary p-4 rounded-lg text-center cursor-pointer hover:border-double hover:bg-[#fdf6fec7]"
         onClick={() => document.getElementById("file-upload").click()}
       >
         <p className="text-black">
-          Drop file or <span className="text-[#90119B] cursor-pointer">Browse</span>
+          Drop file or <span className="text-primary cursor-pointer">Browse</span>
         </p>
         <p className="text-sm text-[#6C606C]">Format: pdf, docx, doc & Max file size: 25 MB</p>
         <input
@@ -74,7 +74,7 @@ const UploadFiles = ({ onFilesUpload }) => {
         >
           Cancel
         </button>
-        <button className="bg-[#90119B] text-white p-3 rounded-lg w-full font-semibold">
+        <button className="bg-primary text-white p-3 rounded-lg w-full font-semibold">
           Done
         </button>
       </div>
@@ -101,7 +101,7 @@ const ShowFiles = ({ files, setFiles }) => {
         <p className="text-[#6C606C] text-base lg:text-sm">
           Uploaded product files can be seen below
         </p>
-        <p className="text-[#6C606C] text-xs ">Files Size: <span className="text-[#90119B]">{size.toFixed(3)}MB</span> &nbsp;&nbsp;&nbsp;&nbsp;  Files Slected: <span className="text-[#90119B]">{files.length}</span> </p>
+        <p className="text-[#6C606C] text-xs ">Files Size: <span className="text-primary">{size.toFixed(3)}MB</span> &nbsp;&nbsp;&nbsp;&nbsp;  Files Slected: <span className="text-primary">{files.length}</span> </p>
          
       </div>
 
@@ -116,7 +116,7 @@ const ShowFiles = ({ files, setFiles }) => {
                   key={index}
                   className="relative bg-slate-100 px-1 py-2 rounded-lg shadow-md flex flex-col items-center justify-center   h-[130px]"
                 >
-                  <FaFile className="text-[#90119B] text-6xl mb-2" />
+                  <FaFile className="text-primary text-6xl mb-2" />
                   <p className="text-sm text-center truncate w-24">{file.name}</p>
                   <button
                     className="absolute top-0 right-0 bg-white rounded-full shadow-md "
@@ -153,15 +153,35 @@ const AddProduct = () => {
     return responses[Math.floor(Math.random() * responses.length)];
   };
 
-  
-  const handleQuerySubmit = () => {
+  const handleQuerySubmit = async (e) => {
+    e.preventDefault();
 
-    if (query.length === 0) { 
-      setResponse("Please enter a valid query.");
-      return;
+    try {
+        const apiUrl = 'https://bdc2-119-252-202-145.ngrok-free.app/get-data';
+
+        const response = await fetch(`${apiUrl}?query=${query}`, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+                 'Allow-Control-Allow-Origin': '*',
+            },
+            // mode: 'no-cors',
+        });
+
+        if (response.ok) {
+            const result = await response.json();
+            alert('Thank you!');
+            setResponse(result.message);
+            console.log(result.message);
+        } else {
+            alert('Error submitting quiz data.'+response);
+            console.error('Server responded with status:', response);
+        }
+    } catch (error) {
+        console.error('Fetch Error:', error);
     }
-    setResponse(getRandomResponse()); 
-  };
+};
+
 
   console.log(uploadedFiles);
 
@@ -179,7 +199,7 @@ const AddProduct = () => {
         <div className="bg-gray-100 p-4 md:p-8 mt-4 rounded-lg">
 
           <h1 className="text-3xl font-bold">
-            Product Knowledge <span className="text-[#90119B]">Base</span>
+            Product Knowledge <span className="text-primary">Base</span>
           </h1>
           <p className="text-base text-gray-700 font-semibold">
             Add product knowledge for the model to recommend products
@@ -206,7 +226,7 @@ const AddProduct = () => {
                 onChange={(e) => setQuery(e.target.value)}
               />
               <button
-                className="w-full bg-[#90119B] text-white py-2 mt-3 rounded-lg hover:bg-[#90119bb5]"
+                className="w-full bg-primary text-white py-2 mt-3 rounded-lg hover:bg-[#90119bb5]"
                 onClick={handleQuerySubmit}
               >
                 Ask Query
@@ -218,7 +238,7 @@ const AddProduct = () => {
               <h2 className="text-lg font-semibold">Answer Related to Query</h2>
               <p className="text-gray-500 text-sm mb-3">Response for the query asked can be seen below</p>
               <textarea
-                className="w-full border border-[#90119B] rounded-lg p-3 flex-grow"
+                className="w-full border border-primary rounded-lg p-3 flex-grow"
                 placeholder="Response will appear here..."
                 value={response}
                 readOnly

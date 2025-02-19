@@ -53,7 +53,7 @@ const CalendarSection = () => {
         />
         </div>
         <div className="mt-6 text-center">
-          <button className="bg-[#8204FF] text-white font-semibold py-2 px-4 rounded-lg hover:bg-[#8204FF60]">
+          <button className="bg-primary text-white font-semibold py-2 px-4 rounded-lg hover:bg-[#8204FF60]">
             Show call list (
             {date[0].toLocaleDateString("en-IN", { day: "2-digit", month: "short" })} -
             {date[1].toLocaleDateString("en-IN", { day: "2-digit", month: "short" })})

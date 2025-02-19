@@ -2,9 +2,11 @@
   "name": "nousteam",
   "version": "0.1.0",
   "private": true,
+  "proxy": "https://2e63-2402-e280-4116-4df-5dd1-8829-a84d-7be9.ngrok-free.app",
   "dependencies": {
     "@fontsource/inter": "^5.1.1",
     "chart.js": "^4.4.7",
+    "cors": "^2.8.5",
     "cra-template": "1.2.0",
     "moment": "^2.30.1",
     "react": "^18.3.1",

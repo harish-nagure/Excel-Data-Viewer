@@ -9,7 +9,7 @@ module.exports = {
         '4xl': '2560px', 
       },
       colors: {
-        primary: "#4caf50",
+        primary: "#90119B",
         secondary: "#3e4b5b",
         background: "#f4f4f4",
       },
