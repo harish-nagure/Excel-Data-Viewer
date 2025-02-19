@@ -141,17 +141,7 @@ const AddProduct = () => {
   const [response, setResponse] = useState("");
 
  
-  const getRandomResponse = () => {
-    const responses = [
-      "The product costs $199.",
-      "This item is currently out of stock.",
-      "Yes, we offer a discount on bulk purchases!",
-      "The watch has a 2-year warranty.",
-      "Shipping time is approximately 3-5 business days.",
-      "We only have limited stock left!",
-    ];
-    return responses[Math.floor(Math.random() * responses.length)];
-  };
+
 
   const handleQuerySubmit = async (e) => {
     e.preventDefault();
