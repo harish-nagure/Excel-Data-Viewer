@@ -6,6 +6,7 @@ import { Chart, CategoryScale, LinearScale, BarController, BarElement, Title, To
 Chart.register(CategoryScale, LinearScale, BarController, BarElement, Title, Tooltip, Legend);
 
 const DataGraphCallScore = ({ data }) => {
+
   const callScoresLabel = [
     "Compassion",
     "Lucidity",
@@ -107,9 +108,14 @@ const DataGraphCallScore = ({ data }) => {
     <div>
       <h3 className="mb-2 text-xl font-bold">Call Score</h3>
       <p className="text-sm text-gray-500 mb-5">Get insight about the call</p>
+      
+      
+
       <div className="w-full h-[250px]">
         <Bar data={chartData} options={options} />
-      </div>
+      </div> 
+
+
     </div>
   );
 };

@@ -6,7 +6,7 @@ import { RxCrossCircled } from "react-icons/rx";
 
 const UploadFiles = ({ onFilesUpload }) => {
 
-  const [uploadedFiles, setUploadedFiles] = useState([]);
+  const [uploadedFiles, setUploadedFiles] = useState([]);           
   const [errorMessage, setErrorMessage] = useState("");
 
   const handleFileUpload = (event) => {
@@ -85,7 +85,7 @@ const UploadFiles = ({ onFilesUpload }) => {
 const ShowFiles = ({ files, setFiles }) => {
   const size = files.length > 0 ? files.reduce((acc, file) => acc + file.size, 0) / (1024 * 1024) : 0;
   
-
+  console.log(files);
   const removeFile = (index) => {
     const updatedFiles = files.filter((_, i) => i !== index);
     setFiles(updatedFiles);
@@ -116,8 +116,10 @@ const ShowFiles = ({ files, setFiles }) => {
                   key={index}
                   className="relative bg-slate-100 px-1 py-2 rounded-lg shadow-md flex flex-col items-center justify-center   h-[130px]"
                 >
+                  {/* <p className="text-xs text-center mb-2">{file.name.split(".")[1]}</p> */}
                   <FaFile className="text-primary text-6xl mb-2" />
                   <p className="text-sm text-center truncate w-24">{file.name}</p>
+                  
                   <button
                     className="absolute top-0 right-0 bg-white rounded-full shadow-md "
                     onClick={() => removeFile(index)}
@@ -153,7 +155,7 @@ const AddProduct = () => {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
-                 'Allow-Control-Allow-Origin': '*',
+                //  'Allow-Control-Allow-Origin': '*',
             },
             // mode: 'no-cors',
         });
@@ -162,7 +164,7 @@ const AddProduct = () => {
             const result = await response.json();
             alert('Thank you!');
             setResponse(result.message);
-            console.log(result.message);
+            // console.log(result.message);
         } else {
             alert('Error submitting quiz data.'+response);
             console.error('Server responded with status:', response);

@@ -74,6 +74,7 @@ const CallSummary = ({ data }) => {
 
   const handleClick = (call) => {
     console.log("Call Data:", call);
+    if (!call) return;
     navigate('/viewIDdetails', { state: call });
   };
 
@@ -84,9 +85,9 @@ const CallSummary = ({ data }) => {
   return (
     <div className="lg:flex-1 bg-white py-4 rounded-lg shadow">
       <h2 className="text-xl font-bold mb-4 px-5 ">Call Summary</h2>
-      <div className="overflow-auto px-1">
+      <div className="overflow-auto scrollbar-thin max-h-[350px] md:max-h-[420px] lg:overflow-x-hidden">
         <table className="min-w-full lg:text-base text-lg text-left">
-          <thead>
+          <thead className="sticky top-0 bg-white">
             <tr className="border-b">
               <th className="py-2 px-4">Call ID</th>
               <th className="py-2 px-4">Name</th>
@@ -103,17 +104,18 @@ const CallSummary = ({ data }) => {
                 className="hover:bg-gray-100 cursor-pointer lg:text-sm text-lg "
                 onClick={() => handleClick(call)}
               >
-                <td className="py-2 px-4  whitespace-nowrap rounded-l-2xl">{call.Call_ID}</td>
-                <td className="py-2 px-4 whitespace-nowrap">{call.Name}</td>
+                <td className="py-2 px-4  whitespace-nowrap rounded-l-2xl">{call.Call_ID ? call.Call_ID : <span className="text-red-800">No Call ID</span>}</td>
+                <td className="py-2 px-4 whitespace-nowrap">{call.Name ? call.Name : <span className="text-red-800">No Name</span>}</td>
                 <td className="py-2 px-4 whitespace-nowrap">+91 455625464</td>
                 <td className="py-2 px-4 whitespace-nowrap">
-                  {new Intl.DateTimeFormat('en-US', {
-                    month: 'long',
-                    day: 'numeric',
-                    year: 'numeric',
-                  }).format(new Date(call.Date))}
+                  {call.Date ? new Intl.DateTimeFormat("en-US", {
+                      month: "long",
+                      day: "numeric",
+                      year: "numeric",
+                    }).format(new Date(call.Date))
+                  : <span className="text-red-800">Invalid Date</span>}
                 </td>
-                <td className="py-2 px-4 whitespace-nowrap">{call.Time}</td>
+                <td className="py-2 px-4 whitespace-nowrap">{call.Time ? call.Time : <span className="text-red-800">No Time</span>}</td>
                 <td className="py-2 px-4 whitespace-nowrap rounded-r-2xl">
                   <div className="flex justify-center items-center">
                     <div className="w-16 h-16">
@@ -129,6 +131,80 @@ const CallSummary = ({ data }) => {
     </div>
   );
 };
+
+
+
+// const CallSummary = ({ data }) => {
+//   const navigate = useNavigate();
+//   const callData = data?.excelData || [];
+
+//   console.log(data);
+
+//   const handleClick = (call) => {
+//     console.log("Call Data:", call);
+//     navigate('/viewIDdetails', { state: call });
+//   };
+
+//   if (!Array.isArray(callData) || callData.length === 0) {
+//     return <p className="text-gray-500">Loading call summary...</p>;
+//   }
+
+//   return (
+//     <div className="lg:flex-1 bg-white py-4 rounded-lg shadow h-[400px] md:h-[500px] overflow-hidden">
+//       <h2 className="text-xl font-bold mb-4 px-5">Call Summary</h2>
+//       <div className="overflow-auto max-h-[350px] md:max-h-[450px]">
+//         <table className="min-w-full lg:text-base text-lg text-left">
+//           <thead className="sticky top-0 bg-white">
+//             <tr className="border-b">
+//               <th className="py-2 px-4 w-1/6">Call ID</th>
+//               <th className="py-2 px-4 w-1/5">Name</th>
+//               <th className="py-2 px-4 w-1/5">Number</th>
+//               <th className="py-2 px-4 w-1/5">Date</th>
+//               <th className="py-2 px-4 w-1/5">Time</th>
+//               <th className="py-2 px-4 w-1/6">Overall Score</th>
+//             </tr>
+//           </thead>
+//           <tbody>
+//             {callData.map((call, index) => (
+//               <tr
+//                 key={index}
+//                 className="hover:bg-gray-100 cursor-pointer lg:text-sm text-lg"
+//                 onClick={() => handleClick(call)}
+//               >
+//                 <td className="py-2 px-4 whitespace-nowrap rounded-l-2xl">
+//                   {call.Call_ID ? call.Call_ID : <span className="text-red-800">No Call ID</span>}
+//                 </td>
+//                 <td className="py-2 px-4 whitespace-nowrap">
+//                   {call.Name ? call.Name : <span className="text-red-800">No Name</span>}
+//                 </td>
+//                 <td className="py-2 px-4 whitespace-nowrap">+91 455625464</td>
+//                 <td className="py-2 px-4 whitespace-nowrap">
+//                   {call.Date
+//                     ? new Intl.DateTimeFormat("en-US", {
+//                         month: "long",
+//                         day: "numeric",
+//                         year: "numeric",
+//                       }).format(new Date(call.Date))
+//                     : <span className="text-red-800">Invalid Date</span>}
+//                 </td>
+//                 <td className="py-2 px-4 whitespace-nowrap">
+//                   {call.Time ? call.Time : <span className="text-red-800">No Time</span>}
+//                 </td>
+//                 <td className="py-2 px-4 whitespace-nowrap rounded-r-2xl">
+//                   <div className="flex justify-center items-center">
+//                     <div className="w-16 h-16">
+//                       <DashboardOverAllGraph data={call} />
+//                     </div>
+//                   </div>
+//                 </td>
+//               </tr>
+//             ))}
+//           </tbody>
+//         </table>
+//       </div>
+//     </div>
+//   );
+// };
 
 const ProductRecommendations = () => {
   const products = [

@@ -7,6 +7,7 @@ import Dashboard from "./components/Dashboard";
 import LocalExcelReader from "./components/LocalExcelReader";
 import AddProduct from "./components/AddProduct"
 import Login from "./components/Login";
+import ManagerPortal from "./components/ManagerPortal";
 
   
 const App = () => {
@@ -22,9 +23,12 @@ const App = () => {
         <Route path="/" element={<Login />} />
         <Route path="/home" element={<Home excelData={excelData} />} />
         <Route path="/dashboard" element={<Dashboard excelData={excelData} />} />
-        <Route path="/viewIDdetails" element={<ViewIDGraph excelData={excelData} />} /> 
+        <Route path="/viewIDdetails" element={<ViewIDGraph />} /> 
         <Route path="/add_product" element={<AddProduct />}/>
+        <Route path="/manager_portal" element={<ManagerPortal excelData={excelData}/>} />
+        
       </Routes>
+
     ) : (
       <div className="flex items-center justify-center h-screen">
         <p className="text-lg text-gray-600">Loading pages...</p>

@@ -35,26 +35,72 @@ const ViewIDGraph = () => {
 
           <div className="grid gap-4 mt-6 md:gap-6 items-center grid-cols-1 md:grid-cols-2 3xl:grid-cols-3">
             <div className="bg-white p-4 md:p-6 rounded-2xl shadow-md">
-              <DataGraphCallScore data={data} />
+
+              {data?.['Call_scores'] ? 
+                <DataGraphCallScore data={data} /> 
+                  :
+                <> 
+                  <h3 className="mb-2 text-xl font-bold">Call Score</h3>
+                  <p className="text-sm text-gray-500 mb-5">Get insight about the call</p>
+                  <span className="text-red-800">Error: No data available</span>
+                </>
+              }
+
             </div>
             <div className="bg-white p-4 md:p-6 rounded-2xl shadow-md">
-              <DataGraphOverScore data={data} />
+                
+              {data?.['Overall Call score'] ? 
+                <DataGraphOverScore data={data} /> 
+                  :
+                <> 
+                  <h3 className="mb-2 text-xl font-bold">Overall Score</h3>
+                  <p className="text-sm text-gray-500 mb-5">Overall score of the call</p>
+                  <span className="text-red-800">Error: No data available</span>
+                </>
+              }
+
             </div>
             <div className="bg-white p-4 md:p-6 rounded-2xl shadow-md">
-              <InterestLevelGauge data={data} />
+              {data?.['interest_level_percentage'] ? 
+                <InterestLevelGauge data={data} /> 
+                  :
+                <> 
+                  <h3 className="mb-2 text-xl font-bold">Interest Level</h3>
+                  <p className="text-sm text-gray-500 mb-5">Get insight about the call</p>
+                  <span className="text-red-800">Error: No data available</span>
+                </>
+              }
+
             </div>
             <div className="bg-white p-4 md:p-6 rounded-2xl shadow-md">
-              <Summary data={data} />
+            {data?.['Summary'] ? 
+                <Summary data={data} /> 
+                  :
+                <> 
+                  <h3 className="mb-2 text-xl font-bold">Summary</h3>
+                  <p className="text-sm text-gray-500 mb-5">Summary of the call</p>
+                  <span className="text-red-800">Error: No data available</span>
+                </>
+              }
             </div>
             <div className="bg-white p-4 md:p-6 rounded-2xl shadow-md">
               <AgentInfo data1={data} />
-            </div>
+            </div> 
             
           </div>
 
           <div className="bg-white p-4 md:p-6 rounded-2xl shadow-md mt-6">
-            <AgentFeedback data={data} />
-          </div>
+
+            {data?.['Agent Feedback'] ? 
+              <AgentFeedback data={data} /> 
+                :
+              <> 
+                <h3 className="mb-2 text-xl font-bold">Agent Feedback</h3>
+                <p className="text-sm text-gray-500 mb-5">Feedback for the agent to improve</p>
+                <span className="text-red-800">Error: No data available</span>
+              </>
+            }
+          </div> 
           
 
 

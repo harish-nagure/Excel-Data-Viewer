@@ -43,13 +43,13 @@ const DashboardSidebar = () => {
           </li>
           <li className="py-1 text-gray-700 hover:text-gray-900 flex items-center cursor-pointer"
             onClick={() => navigate("/add_product")}>
-            
             <MdOutlineAnalytics    className="mr-2 size-5" />
             <p>Add Product</p>
           </li>
-          <li className="py-1 text-gray-700 hover:text-gray-900 flex items-center cursor-pointer">
+          <li className="py-1 text-gray-700 hover:text-gray-900 flex items-center cursor-pointer"
+          onClick={() => navigate("/manager_portal")}>
             <HiOutlineNewspaper className="mr-2 size-5" />
-            <p>News</p>
+            <p>Manager Portal</p>
           </li>
           <li className="py-1 text-gray-700 hover:text-gray-900 flex items-center cursor-pointer">
             <IoBagRemoveOutline className="mr-2 size-5" />

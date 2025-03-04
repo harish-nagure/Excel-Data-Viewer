@@ -11,6 +11,7 @@ body{
 
   .scrollbar-thin::-webkit-scrollbar {
     margin-top: 2px;
+    width: 5px;
     height: 3px;
   }
 
@@ -26,3 +27,5 @@ body{
     @apply bg-[#6b0e7a];
   }
 }
+
+

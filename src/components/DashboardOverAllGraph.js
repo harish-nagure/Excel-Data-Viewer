@@ -12,17 +12,24 @@ const centerTextPlugin = {
 
     const score = chart.data.datasets[0].data[0]/10;
 
-    const text = `${score}/5`; 
+    
 
+    const text = score ? `${score}/5`:"No Data";
     const fontSize = 16; 
 
     ctx.save();
-    ctx.font = `bold ${fontSize}px`;
+    if (text === 'No Data') {
+      ctx.font = `bold ${fontSize}px`;
+      ctx.fillStyle = '#991b1b';
+    }else{
+      ctx.font = `bold ${fontSize}px`;
+      ctx.fillStyle = '#000000';
+    }
+
+
     ctx.font = 'bold';
     ctx.textAlign = 'center';
     ctx.textBaseline = 'middle';
-
-    ctx.fillStyle = '#000000';
     ctx.fillText(text, width / 2, height / 2);
     ctx.restore();
   },
