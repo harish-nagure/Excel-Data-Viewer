@@ -19,8 +19,8 @@ import { Line } from 'react-chartjs-2';
 
 
 
-// import Highcharts from "highcharts";
-// import HighchartsReact from "highcharts-react-official";
+import Highcharts from "highcharts";
+import HighchartsReact from "highcharts-react-official";
 
 
 ChartJS.register(
@@ -63,7 +63,26 @@ const MultiLineChartOfAgents = ({ data }) => {
       title: {
         display: false,
       },
-      
+      tooltip: {
+        padding: 12,  
+        backgroundColor: "rgba(0, 0, 0, 0.7)", 
+        titleFont: {
+          size: 14,
+          weight: "bold",
+        },
+        bodyFont: {
+          size: 13,
+        },
+        cornerRadius: 10,
+        displayColors: true,
+        callbacks: {
+          labelColor: (context) => ({
+            borderColor: context.dataset.pointBorderColor,
+            backgroundColor: context.dataset.pointBackgroundColor,
+            borderRadius: 6,
+          }),
+        },
+      },
     },
     scales: {
       x: {
@@ -192,77 +211,95 @@ const MultiLineChartOfAgents = ({ data }) => {
 
 
 
-// const JitterScatterChart = ({ data }) => {
+const JitterScatterChart = ({ data }) => {
 
-//   const colors = ["#DD5B5D", "#FF7D7F", "#DBED54", "#8FDF7D", "#63B950"];
+  const colors = ["#DD5B5D", "#FF7D7F", "#DBED54", "#8FDF7D", "#63B950"];
 
-//   const processAgentData = (agentKey, index) =>
-//     data.map((item) => [
-//       index + (Math.random() - 0.5) * 0.3, 
-//       item?.[agentKey] ?? 0
+  const processAgentData = (agentKey, index) =>
+    data.map((item) => ({
+      x: index + (Math.random() - 0.5) * 0.4, 
+      //  y: item?.[agentKey] ?? 0
 
-//       // (item?.[agentKey] ?? 0) + (Math.random() - 0.4) * 0.9 
-//     ]);
+      y: (item?.[agentKey] ?? 0) + (Math.random() - 0.4) * 0.9,
+      Call_ID: item?.Call_ID ?? "Unknown",
 
-//   const options = {
-//     chart: {
-//       type: "scatter",
-//       backgroundColor: "#FFFFFF",
-//       width: 600, 
-//       height: 220, 
-//     },
-//     title: { text: null },
-//     colors,
-//     xAxis: {
-//       categories: ["Agent 1", "Agent 2", "Agent 3", "Agent 4", "Agent 5"],
-//       min: 0, 
-//       max: 4, 
-//       scrollbar: { enabled: true }, 
-//       labels: {
-//         formatter: function () {
-//           return this.value; 
-//         },
-//       },
-//     },
-//     yAxis: {
-//       title: { text: "Call Scores" },
-//     },
-//     legend: {
-//       enabled: false,
-//     },
+      }));
+
+  const options = {
+    chart: {
+      type: "scatter",
+      backgroundColor: "#FFFFFF",
+      width: 600, 
+      height: 220, 
+    },
+    title: { text: null },
+    colors,
+    xAxis: {
+      categories: ["Agent 1", "Agent 2", "Agent 3", "Agent 4", "Agent 5"],
+      min: 0, 
+      max: 4, 
+      scrollbar: { enabled: true }, 
+      labels: {
+        formatter: function () {
+          return this.value; 
+        },
+      },
+    },
+
+    yAxis: {
+      title: { text: "Call Scores"  },
+    },
+
+    legend: {
+      enabled: false,
+    },
+
+    credits: {
+      enabled: false, 
+    },
+
+    tooltip: {
+      backgroundColor: "rgba(0, 0, 0, 0.6)",
+      style: {
+        color: "#FFFFFF", 
+        fontSize: "14px",
+      },
+      borderRadius: 8,
+      formatter: function () {
+        return `ID: ${this.point.Call_ID }, Score: ${this.y.toFixed(2)}`;
+      },
+    },
+  
+    plotOptions: {
+      scatter: {
+        showInLegend: true,
+        marker: { radius: 4, symbol: "circle" }, 
+      },
+    },
     
-//     plotOptions: {
-//       scatter: {
-//         showInLegend: true,
-//         marker: { radius: 4, symbol: "circle" }, 
-//         tooltip: {
-//           pointFormat: "Agent {series.name}, Score: {point.y:.3f}",
-//         },
-//       },
-//     },
-//     series: [
-//       { name: "Agent 1", data: processAgentData("Agent01", 0) },
-//       { name: "Agent 2", data: processAgentData("Agent02", 1) },
-//       { name: "Agent 3", data: processAgentData("Agent03", 2) },
-//       { name: "Agent 4", data: processAgentData("Agent04", 3) },
-//       { name: "Agent 5", data: processAgentData("Agent05", 4) },
-//     ],
-//   };
+    series: [
+      { name: "Agent 1", data: processAgentData("Agent01", 0) },
+      { name: "Agent 2", data: processAgentData("Agent02", 1) },
+      { name: "Agent 3", data: processAgentData("Agent03", 2) },
+      { name: "Agent 4", data: processAgentData("Agent04", 3) },
+      { name: "Agent 5", data: processAgentData("Agent05", 4) },
+    ],
+  };
 
-//   return (
-//     <div>
-//       <h3 className="mb-2 text-xl font-bold">Agent Report</h3>
-//       <p className="text-sm text-gray-500 mb-5">Call report for each agent</p>
+  return (
+    <div>
+      <h3 className="mb-2 text-xl font-bold">Agent Report</h3>
+      <p className="text-sm text-gray-500 mb-5">Call report for each agent</p>
 
-//       {/* 🔹 Scrollable Container */}
-//       <div className="overflow-x-auto scrollbar-thin">
-//         <div className="w-fit h-fit">  
-//           <HighchartsReact highcharts={Highcharts} options={options} />
-//         </div>
-//       </div>
-//     </div>
-//   );
-// };
+      {/* 🔹 Scrollable Container */}
+      <div className="overflow-x-auto scrollbar-thin">
+        <div className="w-fit h-fit">  
+          <HighchartsReact highcharts={Highcharts} options={options} />
+        </div>
+      </div>
+    </div>
+  );
+};
 
 
 
@@ -292,7 +329,7 @@ const ManagerPortal = ({excelData}) => {
               <MultiLineChartOfAgents data={excelData} />
             </div>
             <div className="bg-white p-4 md:p-6 rounded-2xl shadow-md">
-            {/* <JitterScatterChart data={excelData} /> */}
+              <JitterScatterChart data={excelData} /> 
             </div>
           </div>
         </div>
