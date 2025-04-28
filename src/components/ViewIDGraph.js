@@ -10,6 +10,8 @@ import DashboardHead from './DashboardHead';
 import Summary from './Summary';
 import AgentFeedback from './AgentFeedback';
 import AgentInfo from './AgentInfo';
+import QAAnalysisForm from './QAAnalysisForm';
+import CallAudioTranscription from './CallAudioTranscription';
 
 const ViewIDGraph = () => {
   const location = useLocation();
@@ -34,6 +36,14 @@ const ViewIDGraph = () => {
           </p>
 
           <div className="grid gap-4 mt-6 md:gap-6 items-center grid-cols-1 md:grid-cols-2 3xl:grid-cols-3">
+
+            
+            <div className="bg-white p-4 md:p-6 rounded-2xl shadow-md">
+              <CallAudioTranscription data={data} />
+            </div>
+              
+
+
             <div className="bg-white p-4 md:p-6 rounded-2xl shadow-md">
 
               {data?.['Call_scores'] ? 
@@ -83,10 +93,19 @@ const ViewIDGraph = () => {
                 </>
               }
             </div>
-            <div className="bg-white p-4 md:p-6 rounded-2xl shadow-md">
+            <div className="bg-white p-8 md:p-7 rounded-2xl shadow-md">
               <AgentInfo data1={data} />
             </div> 
+               
+            {/* QAAnalysisForm */}
+            <div className="bg-white p-4 md:p-6 rounded-2xl shadow-md">
+              <QAAnalysisForm data={data} />
+            </div>
             
+
+
+
+
           </div>
 
           <div className="bg-white p-4 md:p-6 rounded-2xl shadow-md mt-6">
