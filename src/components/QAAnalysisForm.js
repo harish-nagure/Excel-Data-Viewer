@@ -1,61 +1,48 @@
 import React, { useState, useEffect } from "react";
-import { useLocation } from "react-router-dom";
 
 const QAAnalysisForm = ({ data }) => {
-
-    const { excelData } = data;
-    console.log("excelData", excelData, data);
-  const location = useLocation();
-  const selectedCall = location.state;
   const [formData, setFormData] = useState({});
   const [errors, setErrors] = useState({});
 
   useEffect(() => {
-    if (excelData && selectedCall) {
-      const matchingRow = excelData.find((row) => row["Call_ID"] === selectedCall["Call_ID"]);
+    if (data && data["Call_ID"]) {
+      let structuredData = {
+        "Call Score": {},
+        "Customer Interest Level": {},
+        "Agent Info": {},
+      };
 
-      if (matchingRow) {
-        let structuredData = {
-          "Call Score": {},
-          "Customer Interest Level": {},
-          "Agent Info": {},
-        };
-
-        if (matchingRow["Score Call"]) {
-          const scoreLabels = matchingRow["Score Call"].split("\n");
-          scoreLabels.forEach((label) => {
-            structuredData["Call Score"][label] = "";
-          });
-        }
-
-        if (matchingRow["interest_level_percentage"]) {
-          structuredData["Customer Interest Level"][`Interest Level Percentage - ${matchingRow["interest_level_percentage"]}%`] = "";
-        }
-
-        const yesNoColumns = [
-          "Miscommunication",
-          "Agent_clarity",
-          "Unnecessary_jargon",
-          "Agent_Introduction",
-          "Call_associated_with_Product",
-          "Explicit_feedback",
-          "Follow_Up_Required",
-        ];
-
-        yesNoColumns.forEach((column) => {
-          if (matchingRow[column]) {
-            structuredData["Agent Info"][`${column.replace(/_/g, " ")} - ${matchingRow[column]}`] = "";
-          }
+      if (data["Score Call"]) {
+        const scoreLabels = data["Score Call"].split("\n");
+        scoreLabels.forEach((label) => {
+          structuredData["Call Score"][label] = "";
         });
-
-        setFormData(structuredData);
-        setErrors({});
-      } else {
-        setFormData({});
-        setErrors({});
       }
+
+      if (data["interest_level_percentage"]) {
+        structuredData["Customer Interest Level"][`Interest Level Percentage - ${data["interest_level_percentage"]}%`] = "";
+      }
+
+      const yesNoColumns = [
+        "Miscommunication",
+        "Agent_clarity",
+        "Unnecessary_jargon",
+        "Agent_Introduction",
+        "Call_associated_with_Product",
+        "Explicit_feedback",
+        "Follow_Up_Required",
+      ];
+
+      yesNoColumns.forEach((column) => {
+        if (data[column]) {
+          structuredData["Agent Info"][`${column.replace(/_/g, " ")} - ${data[column]}`] = "";
+        }
+      });
+
+      setFormData(structuredData);
+      setErrors({});
     }
-  }, [excelData, selectedCall]);
+  }, [data]);
 
   const handleChange = (category, label, value) => {
     setFormData((prevData) => ({
@@ -124,9 +111,9 @@ const QAAnalysisForm = ({ data }) => {
   };
 
   return (
-    <div className="w-full mx-auto bg-white rounded-lg p-6  mt-6">
+    <div className="w-full mx-auto bg-white rounded-lg p-6 mt-6">
       <h2 className="text-2xl font-bold text-black-700 mb-4">System Analysis & QA Analysis</h2>
-     
+
       {Object.keys(formData).length > 0 ? (
         <div className="space-y-6">
           {Object.keys(formData).map((category, catIndex) => (
@@ -135,10 +122,7 @@ const QAAnalysisForm = ({ data }) => {
               <div className="grid grid-cols-2 gap-y-4 gap-x-6">
                 {Object.keys(formData[category]).map((label, index) => (
                   <React.Fragment key={index}>
-                    
                     <label className="font-semibold text-gray-800">{label}</label>
-
-                    
                     <div className="w-full">
                       {label.includes("Miscommunication") ||
                       label.includes("Agent clarity") ||
@@ -179,7 +163,7 @@ const QAAnalysisForm = ({ data }) => {
                           onChange={(e) => handleChange(category, label, e.target.value)}
                         />
                       )}
-                      {errors[label] && <p className="text-gary-500 text-sm">{errors[label]}</p>}
+                      {errors[label] && <p className="text-red-500 text-sm">{errors[label]}</p>}
                     </div>
                   </React.Fragment>
                 ))}
